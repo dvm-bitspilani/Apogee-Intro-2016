@@ -32,6 +32,8 @@ html,body {
 	margin:auto;
 }
 
+
+/**/
 .div_content
 {
 	position: absolute;
@@ -350,7 +352,6 @@ object{
 			position: absolute;
 			left: -900px;
     		top: -870px;
-			background: blue;
 			border-radius: 100%;
 			width: 2000px;
 			height: 2000px;
@@ -400,9 +401,8 @@ object{
 		  text-decoration: none;
 		  font-size: 1.2em;
 		}
-
-		.speaker:hover  a{
-		  color: #6EA3FD;
+		.speaker:hover a{
+			color: inherit;
 		}
 		.speaker a:before {
 		  content: "";
@@ -411,7 +411,6 @@ object{
 		  height: 1px;
 		  bottom: -5px;
 		  left: 0;
-		  background-color: #000;
 		  visibility: hidden;
 		  -moz-transform: scaleX(0);
 		  -webkit-transform: scaleX(0);
@@ -422,11 +421,68 @@ object{
 		}
 		.speaker:hover a:before {
 		  visibility: visible;
-		  background-color:  #6EA3FD;
 		  -moz-transform: scaleX(1);
 		  -webkit-transform: scaleX(1);
 		  transform: scaleX(1);
 		}
+.speaker:hover .color0{
+	color: #becb64;
+}
+.color0:before{	
+	background-color: #becb64;
+}
+.speaker:hover .color1{
+	color: #ff8441;
+}
+.color1:before{
+	background-color: #ff8441;
+}
+.speaker:hover .color2{
+	color: #ea6c95;
+}
+.color2:before{
+	background-color: #ea6c95;
+}
+.speaker:hover .color3{
+	color: #ff5252;
+}
+.color3:before{	
+	background-color: #ff5252;
+}
+.speaker:hover .color4{
+	color: #6EA3FD;
+}
+.color4:before{	
+	background-color: #6EA3FD;
+}
+.speaker:hover .color5{
+	color: #ff4081;
+}
+.color5:before{	
+	background-color: #ff4081;
+}
+.speaker:hover .color6{
+	color: #47c2d1;
+}
+.color6:before{	
+	background-color: #47c2d1;
+}
+.speaker:hover .color7{
+	color: #81c684;
+}
+.color7:before{	
+	background-color: #81c684;
+}
+.speaker:hover .color8{
+	color: #915986;
+}
+.color8:before{	
+	background-color: #915986;
+}
+
+
+
+
 #spk_details{
 	position: absolute;
 	top:0;
@@ -1034,10 +1090,11 @@ button:hover
 	</div>
 </div>
 
-<div id="thinkagain" style="background:red;display:block;" class="div_content">
+<div id="thinkagain" style="display:block;" class="div_content">
 	<div class="div_title">TH!NK AGAIN</div>
 	<div class="contact_data">
-		<div class="speaker">
+		<!-- elements added dynamically -->
+		<!-- <div class="speaker">
 			<div class="spk_img">
 				<div class="spk_imgc"></div>
 				<div class="spk_imga" style="background-image: url('images/phaser.png')"></div>
@@ -1045,79 +1102,7 @@ button:hover
 			<div class="speakerdet">
 				<a href="">PHASER</a>
 			</div>
-		</div>
-		<div class="speaker">
-			<div class="spk_img">
-				<div class="spk_imgc"></div>
-				<div class="spk_imga" style="background-image: url('images/phaser.png')"></div>
-			</div>
-			<div class="speakerdet">
-				<a href="">PHASER</a>
-			</div>
-		</div>
-		<div class="speaker">
-			<div class="spk_img">
-				<div class="spk_imgc"></div>
-				<div class="spk_imga" style="background-image: url('images/phaser.png')"></div>
-			</div>
-			<div class="speakerdet">
-				<a href="">PHASER</a>
-			</div>
-		</div>
-		<div class="speaker">
-			<div class="spk_img">
-				<div class="spk_imgc"></div>
-				<div class="spk_imga" style="background-image: url('images/phaser.png')"></div>
-			</div>
-			<div class="speakerdet">
-				<a href="">PHASER</a>
-			</div>
-		</div>
-		<div class="speaker">
-			<div class="spk_img">
-				<div class="spk_imgc"></div>
-				<div class="spk_imga" style="background-image: url('images/phaser.png')"></div>
-			</div>
-			<div class="speakerdet">
-				<a href="">PHASER</a>
-			</div>
-		</div>
-		<div class="speaker">
-			<div class="spk_img">
-				<div class="spk_imgc"></div>
-				<div class="spk_imga" style="background-image: url('images/phaser.png')"></div>
-			</div>
-			<div class="speakerdet">
-				<a href="">PHASER</a>
-			</div>
-		</div>
-		<div class="speaker">
-			<div class="spk_img">
-				<div class="spk_imgc"></div>
-				<div class="spk_imga" style="background-image: url('images/phaser.png')"></div>
-			</div>
-			<div class="speakerdet">
-				<a href="">PHASER</a>
-			</div>
-		</div>
-		<div class="speaker">
-			<div class="spk_img">
-				<div class="spk_imgc"></div>
-				<div class="spk_imga" style="background-image: url('images/phaser.png')"></div>
-			</div>
-			<div class="speakerdet">
-				<a href="">PHASER</a>
-			</div>
-		</div>
-		<div class="speaker">
-			<div class="spk_img">
-				<div class="spk_imgc"></div>
-				<div class="spk_imga" style="background-image: url('images/phaser.png')"></div>
-			</div>
-			<div class="speakerdet">
-				<a href="">PHASER</a>
-			</div>
-		</div>			
+		</div> -->
 	</div>
 </div>
 <div id="spk_details" style="display:none;">
@@ -1125,23 +1110,27 @@ button:hover
 	<div id="spk_content_cont">
 		<div id="arrow_box"></div>
 		<div id="spk_content">
-			<div id="spk_head">Phod Speaker</div>
+			<div id="spk_head">
+				<!-- Name of speaker -->
+			</div>
 			<div id="spk_desc">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vel ipsam necessitatibus provident vero pariatur magni exercitationem possimus, nam facere nihil error in praesentium fugit nesciunt totam neque quod quam.
+				<!-- Description of speaker -->
 			</div>
 		</div>
 	</div>
 	<div id="spk_details_img" style="display:none;">
 		<div id="spk_det_fill"></div>
 		<div id="name_slide">
-			<span id="name_prev"> < </span>
-			<div id="name_spk">Phod Speaker</div>
-			<span id="name_next" onclick="changeSpk()"> > </span>
+			<span id="name_prev" onclick="changeSpk(false)"> < </span>
+			<div id="name_spk">
+				<!-- Name of speaker -->
+			</div>
+			<span id="name_next" onclick="changeSpk(true)"> > </span>
 		</div>
 		<div class="speaker_static abs_center">
 			<div class="spk_sta_img">
 				<div class="spk_sta_imgc"></div>
-				<div class="spk_sta_imga" style="background-image: url('images/phaser.png')"></div>
+				<div class="spk_sta_imga"></div>
 			</div>
 		</div>
 	</div>
@@ -1268,9 +1257,18 @@ button:hover
 
 <script type="text/javascript" src="js/main.js"></script>
 <script>
+$(document).ready(function(){
+	var data = "";
+	for(var i=0;i<speaker_data.length;i++)
+	{
+		data+= '<div class="speaker"><div class="spk_img"><div class="spk_imgc" style="background-color:'+colors[i]+'"></div><div class="spk_imga" style="background-image: url('+speaker_data[i].img+')"></div></div><div class="speakerdet"><a class="color'+i+'" style="background-color:transparent">'+speaker_data[i]["name"]+'</a></div></div>'
+	}
+	$('#thinkagain .contact_data').html(data);
+});
 var cur_con = 0; //0-About 7-Contacts
-var colors = ['#ff8441','#ea6c95','#ff5252','#6EA3FD','#ff4081','#47c2d1','#81c684','#915986','#becb64'];
+var colors = ['#becb64','#ff8441','#ea6c95','#ff5252','#6EA3FD','#ff4081','#47c2d1','#81c684','#915986'];
 var divname = ['#about','#cam_amb','#events','#thinkagain','#reg','#pnp','#spons','#contacts'];
+var currentSpk = 0; //stores current speaker that is displayed
 
 $('#nav_but').click(function(){
 	if($(this).hasClass("is-active") == true)
@@ -1343,7 +1341,7 @@ function divanim()
 }
 
 
-$('.speaker').click(function(){
+$(document).on('click', '.speaker', function(){
 	spk_details_on = true;
 	var spk = $(this);
 	spk.find('.speakerdet').fadeOut();
@@ -1376,7 +1374,12 @@ $('.speaker').click(function(){
 		thinkagain_reset(spk);
 		$('#spk_content_cont').animate({'left':'0'},400);
 		$('#spk_details_img').css('display','block');
-		
+		currentSpk = spk.index();
+		var spk_detail = speaker_data[spk.index()];
+		$('#spk_head').text(spk_detail["name"]);
+		$('#spk_desc').text(spk_detail["description"]);
+		$('#name_spk').text(spk_detail["name"]);
+		$('.spk_sta_imga').css('background-image','url("'+spk_detail["img"]+'")');
 		setTimeout(function(){
 
 			$('.spk_sta_imgc').css({	
@@ -1424,13 +1427,21 @@ function spk_details_init(){
 	$('#name_slide').css('display','none');
 	spk_details_on=false;
 }
-var currentSpk = 0;
 var spk_details_on = false;
-function changeSpk(){
-	currentSpk++;
-	if(currentSpk==colors.length)
-	{
-		currentSpk = 0;
+function changeSpk(forward){
+	if(forward){
+		currentSpk++;
+		if(currentSpk==speaker_data.length)
+		{
+			currentSpk = 0;
+		}
+	}
+	else{
+		currentSpk;
+		if(currentSpk==0)
+		{
+			currentSpk = speaker_data.length-1;
+		}
 	}
 	var ratio = $(window).width()/1000;
 	$('#spk_det_fill').css({
@@ -1470,6 +1481,11 @@ function changeSpk(){
 		  'transform'         : '',
 		});
 		$('.spk_sta_imga').css({'background-position': ''});
+		var spk_detail = speaker_data[currentSpk];
+		$('#spk_head').text(spk_detail["name"]);
+		$('#spk_desc').text(spk_detail["description"]);
+		$('#name_spk').text(spk_detail["name"]);
+		$('.spk_sta_imga').css('background-image','url("'+spk_detail["img"]+'")');
 		setTimeout(function() {
 			$('#name_slide').fadeIn();
 			$('.spk_sta_imga').css('opacity','1');
