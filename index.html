@@ -4,10 +4,11 @@
 	<meta charset="UTF-8">
 	<title>APOGEE 16 INTRO</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link href='https://fonts.googleapis.com/css?family=Roboto:700' rel='stylesheet' type='text/css'>
+	<!-- <link href='https://fonts.googleapis.com/css?family=Roboto:700' rel='stylesheet' type='text/css'> -->
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400,900' rel='stylesheet' type='text/css'>
 	<script type="text/javascript" src="js/jquery.min(1.11.1).js"></script>
-	 <script src="https://maps.googleapis.com/maps/api/js"></script> 
-	<script type="text/javascript" src="js/customMap.js"></script>
+	 <!-- // <script src="https://maps.googleapis.com/maps/api/js"></script>  -->
+	<!-- // <script type="text/javascript" src="js/customMap.js"></script> -->
 </head>
 <style>
 html,body {
@@ -15,7 +16,7 @@ html,body {
 	padding: 0;
 	width: 100%;
 	height: 100%;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	overflow-x:hidden; 
 }
 
@@ -138,12 +139,14 @@ html,body {
 }
 .header .but_head{
 	position: relative;
-	font-size: 2em;
-	color: #000;
-	margin: 1% 0;
-	font-weight: bold;
-	top: 15px;
-	opacity: 0;
+    font-size: 3em;
+    color: #000;
+    margin: 10px 0;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+    /* letter-spacing: 1px; */
+    top: 15px;
+    opacity: 0;
 	-moz-transition: top 0.5s ease-in-out,opacity 0.5s ease-in-out;
 	-webkit-transition: top 0.5s ease-in-out,opacity 0.5s ease-in-out;
 	transition: top 0.5s ease-in-out,opacity 0.5s ease-in-out;
@@ -152,7 +155,7 @@ html,body {
 	cursor: pointer;
 }
 .header .but_head>span:hover{
-	color: white;
+	color: #123456;
 }
 
 /*Nav button*/
@@ -161,7 +164,6 @@ html,body {
 	top:15px;
 	right:15px;
 	border-radius: 50%;
-	box-shadow: 0 0 5px 0 black;
 	z-index: 1100;
 }
 .c-hamburger {
@@ -182,17 +184,35 @@ html,body {
   transition: background 0.3s;
 }
 
+.c-hamburger:hover
+{
+	box-shadow: 1px 1px 5px 1px #444;
+	background: white;
+}
+
 .c-hamburger:focus {
   outline: none;
 }
 .c-hamburger span {
   display: block;
   position: absolute;
-  top: 20px;
-  left: 9px;
-  right: 9px;
-  height: 4px;
-  background: white;
+  top: 22px;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+  height: 2px;
+  width: 50%;
+  background: black;
+	-moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;  
+}
+.c-hamburger:hover span
+{
+	width: 60%;
+	-moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .c-hamburger span::before,
@@ -201,20 +221,20 @@ html,body {
   display: block;
   left: 0;
   width: 100%;
-  height: 4px;
-  background-color: #fff;
+  height: 2px;
+  background-color: black;
   content: "";
 }
 
 .c-hamburger span::before {
-  top: -10px;
+  top: -7px;
 }
 
 .c-hamburger span::after {
-  bottom: -10px;
+  bottom: -7px;
 }
 .c-hamburger--htx {
-  background-color: #ff3264;
+  background-color: white;
 }
 
 .c-hamburger--htx span {
@@ -237,7 +257,8 @@ html,body {
 
 /* active state, i.e. menu open */
 .c-hamburger--htx.is-active {
-  background-color: #cb0032;
+  background-color: transparent;
+  box-shadow: none;
 }
 
 .c-hamburger--htx.is-active span {
@@ -257,6 +278,8 @@ html,body {
 .c-hamburger--htx.is-active span::before,
 .c-hamburger--htx.is-active span::after {
   transition-delay: 0s, 0.3s;
+  background-color: black;
+  height: 3px;
 }
 
 /*Links*/
@@ -317,7 +340,6 @@ object{
 	}
 	#fulltransit
 	{
-		background: blue;
 		left:50vw;
 		top: 0;
 		position: absolute;
@@ -658,7 +680,6 @@ object{
 /*-----------------------------CONTACTS----------------------------------*/
 #contacts
 {
-	display: block;
     background-color: #3A474A;
     color: white;
     letter-spacing: 1px;
@@ -667,8 +688,8 @@ object{
 .contactinfo
 {
 	
-	width: 270px;
-	margin: 30px 50px 30px 50px;
+	width: 282px;
+	margin: 30px 49px 30px 49px;
 	position: relative;
 	text-align: center;
 	display: inline-block;
@@ -679,7 +700,7 @@ object{
 
     .contactinfo
 	{
-		margin: 25px;
+		margin: 19px;
 	}	
 }
 
@@ -879,27 +900,35 @@ p.content {
 /*About END*/
 
 /*--------------------Sponsors----------------------*/
+#spons
+{
+	background: #f8512a;
+}
 .spons_cont
 {
 	position: relative;
 	display: inline-block;
-	margin: 10px 5px 0px 5px;
+	margin: 25px;
 	width: 200px;
     height: 200px;
     border: 1px solid #ddd;
-    background: url("images/sponsback.jpg") no-repeat center center #f9f9f9;
+    /*background: url("images/sponsback.jpg") no-repeat center center #f9f9f9;*/
+    background-color: white;
+ 
+    box-shadow: 3px 3px 20px -1px #444;
     -moz-transition: all 0.2s ease-in;
     -webkit-transition: all 0.2s ease-in;
     transition: all 0.2s ease-in;
 }
 
 .spons_cont:hover{
-	border:1px solid #999;
+	/*border:1px solid #999;*/
+	box-shadow: 2px 2px 20px -2px #222;
 	
 	/* CSS3 inset shadow: */
-	-moz-box-shadow:0 0 30px #999 inset;
+/*	-moz-box-shadow:0 0 30px #999 inset;
 	-webkit-box-shadow:0 0 30px #999 inset;
-	box-shadow:0 0 30px #999 inset;
+	box-shadow:0 0 30px #999 inset;*/
 }
 
 .spons_img
@@ -912,24 +941,52 @@ p.content {
 
 
 /*---------------------REGistration Start--------------------*/
+
+#reg
+{
+	background-color: #5E6FC1;
+}
+
 #regform 
 {
-	display:inline-block;
-	margin:20px;
 	border: 1px solid #ddd;
 	background-color: #fff;
-	padding: 30px 14px 25px 14px;
+	padding: 40px 25px 35px 25px;
 	text-align: left;
+	max-width: 600px;
+	left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 2px;
+}
+#regform>form
+{
+	width: 300px;
+	left:0;
+	right: 0;
+	margin: auto;
+	text-align: center;
+}
+#regform>form div,#regform>form span,#regform>form label,#regform>form input
+{
+	text-align: center !important;
+}
+#regform>form label
+{
+	width: 280px;
 }
 
 #regdes
 {
-	display:inline-block;
-	margin:25px;
-	vertical-align:top;
-	padding:10px;
-	font-size: 1.3em;
-	max-width: 600px;
+	
+    vertical-align: top;
+    padding: 20px;
+    font-size: 2em;
+    line-height: 1.4em;
+    max-width: 900px;
+    left: 0;
+    right: 0;
+    margin: 30px auto 30px auto ;
 }
 		/* form starting stylings ------------------------------- */
 .group        { 
@@ -1048,14 +1105,14 @@ button:hover
 	<div class="fill"></div>
 	<div class="head_content">
 		<div class="but_links">
-			<div class="but_head" style="transition-delay: 0s"><span>About</span></div>
-			<div class="but_head" style="transition-delay: 0.05s"><span>Campus Ambassdor</span></div>
-			<div class="but_head" style="transition-delay: 0.1s"><span>Events</span></div>
-			<div class="but_head" style="transition-delay: 0.15s"><span>Think Again</span></div>
-			<div class="but_head" style="transition-delay: 0.2s"><span>Registration</span></div>
-			<div class="but_head" style="transition-delay: 0.25s"><span>Paper & Persentation</span></div>
-			<div class="but_head" style="transition-delay: 0.3s"><span>Sponsors</span></div>
-			<div class="but_head" style="transition-delay: 0.35s"><span>Contact</span></div>
+			<div class="but_head" style="transition-delay: 0s"><span><b>ABOUT</b></span></div>
+			<div class="but_head" style="transition-delay: 0.05s;display:none;"><span>Campus Ambassdor</span></div>
+			<div class="but_head" style="transition-delay: 0.1s"><span>EVENTS</span></div>
+			<div class="but_head" style="transition-delay: 0.15s"><span>THINK AGAIN</span></div>
+			<div class="but_head" style="transition-delay: 0.2s"><span>REGISTRATION</span></div>
+			<div class="but_head" style="transition-delay: 0.25s"><span>PAPER & PRESENTATION</span></div>
+			<div class="but_head" style="transition-delay: 0.3s"><span>SPONSORS</span></div>
+			<div class="but_head" style="transition-delay: 0.35s"><span>CONTACTS</span></div>
 		
 			<div id="social">
 				<div id="gplus">
@@ -1130,7 +1187,7 @@ button:hover
 </div>
 
 
-<div id="thinkagain" style="display:block;" class="div_content">
+<div id="thinkagain" style="display:none;" class="div_content">
 	<div class="div_title">TH!NK AGAIN</div>
 	<div class="contact_data">
 		<!-- elements added dynamically -->
@@ -1177,10 +1234,10 @@ button:hover
 </div>
 
 
-<div id="reg" class="div_content">
+<div id="reg" class="div_content" style="display:block;">
 	<div class="div_title">REGISTRATION</div>
-	<div style="text-align:center;">
-		<div id="regdes">Fill in the form to stay notified with APOGEE'16 updates.</div>
+	<div style="text-align:center;margin-top:50px;">
+		<div id="regdes">Fill in the form to register for APOGEE 2016 and stay notified with the latest updates.</div>
 		<div id="regform">
 			<form>
 				<div class="group">      
@@ -1214,14 +1271,14 @@ button:hover
 
 <div id="pnp" class="div_content"></div>
 
-<div id="spons" class="div_content">
+<div id="spons" class="div_content" >
 	<div class="div_title">SPONSORS</div>
-	<div id="sponsdata" class="contact_data">
+	<div id="sponsdata" class="contact_data" style="margin-top:40px;">
 		
 	</div>
 </div>
 
-<div id="contacts" class="div_content" style="display:block;">
+<div id="contacts" class="div_content" >
 	<div class="div_title">CONTACTS</div>
 	<div class="div_data">
 		<div class="contact_data" id="c_data">	
@@ -1301,6 +1358,7 @@ $('.but_head > span').click(function(){
 	$(divname[cur_con]).css('display','none');
 	cur_con = $(this).parent().index();
 	$('#nav_but').click();
+	$('#fulltransit').css('background-color',colors[cur_con]);
 	divanim();
 });
 
@@ -1699,6 +1757,13 @@ sponsload();
 }
 
 contactsload();
+
+$('.header .but_head>span').hover(function(){
+	var i = $(this).parent().index();
+	$(this).css('color',colors[i]);
+},function(){
+	$(this).css('color','#000');
+})
 </script>
 </body>
 </html>
