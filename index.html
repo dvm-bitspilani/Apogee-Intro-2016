@@ -4,9 +4,10 @@
 	<meta charset="UTF-8">
 	<title>APOGEE 16 INTRO</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link href='https://fonts.googleapis.com/css?family=Roboto:700' rel='stylesheet' type='text/css'>
+	<!-- <link href='https://fonts.googleapis.com/css?family=Roboto:700' rel='stylesheet' type='text/css'> -->
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400,900' rel='stylesheet' type='text/css'>
 	<script type="text/javascript" src="js/jquery.min(1.11.1).js"></script>
-	<!-- // <script src="https://maps.googleapis.com/maps/api/js"></script>  -->
+	 <!-- // <script src="https://maps.googleapis.com/maps/api/js"></script>  -->
 	<!-- // <script type="text/javascript" src="js/customMap.js"></script> -->
 </head>
 <style>
@@ -15,7 +16,7 @@ html,body {
 	padding: 0;
 	width: 100%;
 	height: 100%;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	overflow-x:hidden; 
 }
 
@@ -43,6 +44,7 @@ html,body {
 	min-height: 100vh;
 	text-align: center; 
 	display: none;
+	padding-top: 45px;
 }
 
 .div_title
@@ -50,6 +52,7 @@ html,body {
 	text-align: center;
     padding: 15px;
     font-size: 2.5em;
+    display: none;
 }
 
 /*Events*/
@@ -137,12 +140,14 @@ html,body {
 }
 .header .but_head{
 	position: relative;
-	font-size: 2em;
-	color: #000;
-	margin: 1% 0;
-	font-weight: bold;
-	top: 15px;
-	opacity: 0;
+    font-size: 3em;
+    color: #000;
+    margin: 10px 0;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+    /* letter-spacing: 1px; */
+    top: 15px;
+    opacity: 0;
 	-moz-transition: top 0.5s ease-in-out,opacity 0.5s ease-in-out;
 	-webkit-transition: top 0.5s ease-in-out,opacity 0.5s ease-in-out;
 	transition: top 0.5s ease-in-out,opacity 0.5s ease-in-out;
@@ -151,7 +156,7 @@ html,body {
 	cursor: pointer;
 }
 .header .but_head>span:hover{
-	color: white;
+	color: #123456;
 }
 
 /*Nav button*/
@@ -160,7 +165,6 @@ html,body {
 	top:15px;
 	right:15px;
 	border-radius: 50%;
-	box-shadow: 0 0 5px 0 black;
 	z-index: 1100;
 }
 .c-hamburger {
@@ -174,11 +178,19 @@ html,body {
   font-size: 0;
   text-indent: -9999px;
   appearance: none;
-  box-shadow: none;
+  box-shadow:0 2px 4px rgba(0,0,0,0.4);
   border-radius: none;
   border: none;
   cursor: pointer;
-  transition: background 0.3s;
+  	-moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.c-hamburger:hover
+{
+	box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+	background: white;
 }
 
 .c-hamburger:focus {
@@ -187,11 +199,21 @@ html,body {
 .c-hamburger span {
   display: block;
   position: absolute;
-  top: 20px;
-  left: 9px;
-  right: 9px;
-  height: 4px;
-  background: white;
+  top: 22px;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+  height: 2px;
+  width: 50%;
+  background: black;
+	-moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;  
+}
+.c-hamburger:hover span
+{
+	width: 60%;
+
 }
 
 .c-hamburger span::before,
@@ -200,24 +222,26 @@ html,body {
   display: block;
   left: 0;
   width: 100%;
-  height: 4px;
-  background-color: #fff;
+  height: 2px;
+  background-color: black;
   content: "";
 }
 
 .c-hamburger span::before {
-  top: -10px;
+  top: -7px;
 }
 
 .c-hamburger span::after {
-  bottom: -10px;
+  bottom: -7px;
 }
 .c-hamburger--htx {
-  background-color: #ff3264;
+  background-color: white;
 }
 
 .c-hamburger--htx span {
-  transition: background 0s 0.3s;
+  	-moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .c-hamburger--htx span::before,
@@ -236,7 +260,8 @@ html,body {
 
 /* active state, i.e. menu open */
 .c-hamburger--htx.is-active {
-  background-color: #cb0032;
+  background-color: transparent;
+  box-shadow: none;
 }
 
 .c-hamburger--htx.is-active span {
@@ -256,6 +281,8 @@ html,body {
 .c-hamburger--htx.is-active span::before,
 .c-hamburger--htx.is-active span::after {
   transition-delay: 0s, 0.3s;
+  background-color: black;
+  height: 3px;
 }
 
 /*Links*/
@@ -302,7 +329,7 @@ object{
 		left:0;
 		top: 0;
 		position: absolute;
-		width: 50vw;
+		width: 100vw;
 		height: 100vh;
 	}
 	#ta_anim
@@ -316,8 +343,7 @@ object{
 	}
 	#fulltransit
 	{
-		background: blue;
-		left:50vw;
+		left:100vw;
 		top: 0;
 		position: absolute;
 		width: 150vw;
@@ -655,42 +681,79 @@ object{
 
 
 /*-----------------------------CONTACTS----------------------------------*/
+#contacts
+{
+    background-color: #3A474A;
+    color: white;
+    letter-spacing: 1px;
+}
 
 .contactinfo
 {
 	
-	width: 220px;
-	margin: 25px;
+	width: 282px;
+	margin: 30px 49px 30px 49px;
 	position: relative;
 	text-align: center;
 	display: inline-block;
+	vertical-align: top;
+}
+
+@media screen and (max-width: 600px) {
+
+    .contactinfo
+	{
+		margin: 19px;
+	}	
 }
 
 .contactinfo>div:nth-child(1)
 {
 	padding: 5px;
 	text-align: center;
-	font-size: 1em;
+	font-size: 1.3em;
 	font-weight: bold;
 	word-wrap: break-word;
 }
 
-.contactinfo>img
+.contactinfo>div:nth-child(2)>img
 {
-	width: 80%;
-	margin: 2% 10% 2% 10%;
+	width: 210px;
+	height: 210px;
+	margin: 2% 5% 2% 5%;
+	border-radius: 50%;
 }
 
 .contactinfo>div:nth-child(3)
 {
     text-align: center;
-    font-size: 0.8em;
-    line-height: 1.3em;
+    font-size: 0.9em;
+    line-height: 1.4em;
+}
+
+.fb_link
+{
+	position: absolute;
+    bottom: 5%;
+    height: 45px;
+    width: 45px;
+    right: 12%;
+    background-color: #3b5998;
+    -moz-transition: .3s ease-in-out;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    border-radius: 50%;
+    padding: 5px;
+    border: 3px solid #fff;
+}
+.fb_link:hover
+{
+	background-color: #fff;
 }
 
 /* Gray Scale */
 
-.contactinfo> img {
+/*.contactinfo div img {
 	-moz-filter: grayscale(100%);
 	-webkit-filter: grayscale(100%) ;
 	filter: grayscale(100%) ;
@@ -698,16 +761,16 @@ object{
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
 }
-.contactinfo> img:hover{
+.contactinfo  div img:hover{
 	-moz-filter: grayscale(0);
 	-webkit-filter: grayscale(0);
 	filter: grayscale(0);
 }
-
+*/
 .contact_data
 {
 	text-align: center;
-	max-width: 1100px;
+	max-width: 1200px;
 	left:0;
 	right: 0;
 	margin: auto;
@@ -840,57 +903,93 @@ p.content {
 /*About END*/
 
 /*--------------------Sponsors----------------------*/
+#spons
+{
+	background: #f8512a;
+}
 .spons_cont
 {
 	position: relative;
 	display: inline-block;
-	margin: 5px;
-	width: 180px;
-    height: 180px;
+	margin: 25px;
+	width: 200px;
+    height: 200px;
     border: 1px solid #ddd;
-    background: url("images/sponsback.jpg") no-repeat center center #f9f9f9;
+    /*background: url("images/sponsback.jpg") no-repeat center center #f9f9f9;*/
+    background-color: white;
+ 
+    box-shadow: 3px 3px 20px -1px #444;
     -moz-transition: all 0.2s ease-in;
     -webkit-transition: all 0.2s ease-in;
     transition: all 0.2s ease-in;
 }
 
 .spons_cont:hover{
-	border:1px solid #999;
+	/*border:1px solid #999;*/
+	box-shadow: 2px 2px 20px -2px #222;
 	
 	/* CSS3 inset shadow: */
-	-moz-box-shadow:0 0 30px #999 inset;
+/*	-moz-box-shadow:0 0 30px #999 inset;
 	-webkit-box-shadow:0 0 30px #999 inset;
-	box-shadow:0 0 30px #999 inset;
+	box-shadow:0 0 30px #999 inset;*/
 }
 
 .spons_img
 {
-	width: 140px;
-	max-height: 140px;
+	width: 150px;
+	max-height: 150px;
 }
 
 /*--------------------Sponsors End----------------------*/
 
 
 /*---------------------REGistration Start--------------------*/
+
+#reg
+{
+	background-color: #5E6FC1;
+}
+
 #regform 
 {
-	display:inline-block;
-	margin:20px;
 	border: 1px solid #ddd;
 	background-color: #fff;
-	padding: 30px 14px 25px 14px;
+	padding: 40px 25px 35px 25px;
 	text-align: left;
+	max-width: 600px;
+	left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 2px;
+}
+#regform>form
+{
+	width: 300px;
+	left:0;
+	right: 0;
+	margin: auto;
+	text-align: center;
+}
+#regform>form div,#regform>form span,#regform>form label,#regform>form input
+{
+	text-align: center !important;
+}
+#regform>form label
+{
+	width: 280px;
 }
 
 #regdes
 {
-	display:inline-block;
-	margin:25px;
-	vertical-align:top;
-	padding:10px;
-	font-size: 1.3em;
-	max-width: 600px;
+	
+    vertical-align: top;
+    padding: 20px;
+    font-size: 2em;
+    line-height: 1.4em;
+    max-width: 900px;
+    left: 0;
+    right: 0;
+    margin: 30px auto 30px auto ;
 }
 		/* form starting stylings ------------------------------- */
 .group        { 
@@ -1009,14 +1108,14 @@ button:hover
 	<div class="fill"></div>
 	<div class="head_content">
 		<div class="but_links">
-			<div class="but_head" style="transition-delay: 0s"><span>About</span></div>
-			<div class="but_head" style="transition-delay: 0.05s"><span>Campus Ambassdor</span></div>
-			<div class="but_head" style="transition-delay: 0.1s"><span>Events</span></div>
-			<div class="but_head" style="transition-delay: 0.15s"><span>Think Again</span></div>
-			<div class="but_head" style="transition-delay: 0.2s"><span>Registration</span></div>
-			<div class="but_head" style="transition-delay: 0.25s"><span>Paper & Persentation</span></div>
-			<div class="but_head" style="transition-delay: 0.3s"><span>Sponsors</span></div>
-			<div class="but_head" style="transition-delay: 0.35s"><span>Contact</span></div>
+			<div class="but_head" style="transition-delay: 0s"><span><b>ABOUT</b></span></div>
+			<div class="but_head" style="transition-delay: 0.05s;display:none;"><span>Campus Ambassdor</span></div>
+			<div class="but_head" style="transition-delay: 0.1s"><span>EVENTS</span></div>
+			<div class="but_head" style="transition-delay: 0.15s"><span>THINK AGAIN</span></div>
+			<div class="but_head" style="transition-delay: 0.2s"><span>REGISTRATION</span></div>
+			<div class="but_head" style="transition-delay: 0.25s"><span>PAPER & PRESENTATION</span></div>
+			<div class="but_head" style="transition-delay: 0.3s"><span>SPONSORS</span></div>
+			<div class="but_head" style="transition-delay: 0.35s"><span>CONTACTS</span></div>
 		
 			<div id="social">
 				<div id="gplus">
@@ -1090,7 +1189,7 @@ button:hover
 	</div>
 </div>
 
-<div id="thinkagain" style="display:block;" class="div_content">
+<div id="thinkagain" style="display:none;" class="div_content">
 	<div class="contact_data">
 		<!-- elements added dynamically -->
 		<!-- <div class="speaker">
@@ -1136,10 +1235,10 @@ button:hover
 </div>
 
 
-<div id="reg" class="div_content">
+<div id="reg" class="div_content" style="display:block;">
 	<div class="div_title">REGISTRATION</div>
 	<div style="text-align:center;">
-		<div id="regdes">Fill in the form to stay notified with APOGEE'16 updates.</div>
+		<div id="regdes">Fill in the form to register for APOGEE 2016 and stay notified with the latest updates.</div>
 		<div id="regform">
 			<form>
 				<div class="group">      
@@ -1173,80 +1272,18 @@ button:hover
 
 <div id="pnp" class="div_content"></div>
 
-<div id="spons" class="div_content">
+<div id="spons" class="div_content" >
 	<div class="div_title">SPONSORS</div>
 	<div id="sponsdata" class="contact_data">
 		
 	</div>
 </div>
 
-<div id="contacts" class="div_content">
+<div id="contacts" class="div_content" >
 	<div class="div_title">CONTACTS</div>
 	<div class="div_data">
-		<div class="contact_data">	
-		<div class="contactinfo">
-			<div class="contact_dept">For Correspondence,Registration and Invites</div>
-			<img src="images/phaser.png" class="contact_img" />
-			<div class="contact_det">
-				Shambhavi Mehrotra<br>
-				+91-8290900449<br>
-				shambhavi@bits-bosm.org
-			</div>
-		</div>
-		<div class="contactinfo">
-			<div class="contact_dept">For Correspondence,Registration and Invites</div>
-			<img src="images/phaser.png" class="contact_img" />
-			<div class="contact_det">
-				Shambhavi Mehrotra<br>
-				+91-8290900449<br>
-				shambhavi@bits-bosm.org
-			</div>
-		</div>
-		<div class="contactinfo">
-			<div class="contact_dept">For Correspondence,Registration and Invites</div>
-			<img src="images/phaser.png" class="contact_img" />
-			<div class="contact_det">
-				Shambhavi Mehrotra<br>
-				+91-8290900449<br>
-				shambhavi@bits-bosm.org
-			</div>
-		</div>
-		<div class="contactinfo">
-			<div class="contact_dept">For Correspondence,Registration and Invites</div>
-			<img src="images/phaser.png" class="contact_img" />
-			<div class="contact_det">
-				Shambhavi Mehrotra<br>
-				+91-8290900449<br>
-				shambhavi@bits-bosm.org
-			</div>
-		</div>
-		<div class="contactinfo">
-			<div class="contact_dept">For Correspondence,Registration and Invites</div>
-			<img src="images/phaser.png" class="contact_img" />
-			<div class="contact_det">
-				Shambhavi Mehrotra<br>
-				+91-8290900449<br>
-				shambhavi@bits-bosm.org
-			</div>
-		</div>
-		<div class="contactinfo">
-			<div class="contact_dept">For Correspondence,Registration and Invites</div>
-			<img src="images/phaser.png" class="contact_img" />
-			<div class="contact_det">
-				Shambhavi Mehrotra<br>
-				+91-8290900449<br>
-				shambhavi@bits-bosm.org
-			</div>
-		</div>
-		<div class="contactinfo">
-			<div class="contact_dept">For Correspondence,Registration and Invites</div>
-			<img src="images/phaser.png" class="contact_img" />
-			<div class="contact_det">
-				Shambhavi Mehrotra<br>
-				+91-8290900449<br>
-				shambhavi@bits-bosm.org
-			</div>
-		</div>	
+		<div class="contact_data" id="c_data">	
+			
 		</div>
 		<div id='map'>
 			
@@ -1322,6 +1359,7 @@ $('.but_head > span').click(function(){
 	$(divname[cur_con]).css('display','none');
 	cur_con = $(this).parent().index();
 	$('#nav_but').click();
+	$('#fulltransit').css('background-color',colors[cur_con]);
 	divanim();
 });
 
@@ -1329,11 +1367,11 @@ function divanim()
 {
 	setTimeout(function(){ 
 		$('#ta_anim').css('display','block');
-		$('#halftransit').animate({'left':'-200vw'},800);
+		$('#halftransit').animate({'left':'-250vw'},800);
 		$('#fulltransit').animate({'left':'-150vw'},800,function(){
 			$('#ta_anim').css('display','none');
 			$('#halftransit').css({'left':'0vw'});
-			$('#fulltransit').css({'left':'50vw'});
+			$('#fulltransit').css({'left':'100vw'});
 		});
 		$(divname[cur_con]).css('display','block');
 	}, 250);
@@ -1632,6 +1670,102 @@ function sponsload()
 	$('#sponsdata').html(dt);
 }
 sponsload();
+
+ var contacts_data = 
+ [
+	{
+		dept:'President',
+		img_url:'images/contacts/prez.jpg',
+		fb_link:'https://www.facebook.com/akhil.reddy.148',
+		cname:'Akhil Reddy',
+		phone:'+91-7728835792',
+		email:'president[at]pilani.bits-pilani.ac.in',
+	},
+	{
+		dept:'General Secretary',
+		img_url:'images/contacts/gen.jpg',
+		fb_link:'https://www.facebook.com/profile.php?id=100001257596047',
+		cname:'Rijul Dutta',
+		phone:'+91-8427686647',
+		email:'gensec[at]pilani.bits-pilani.ac.in',
+	},
+	{
+		dept:'For sponsorship and marketing',
+		img_url:'images/contacts/spons.jpg',
+		fb_link:'https://www.facebook.com/mohammed.motiwala1',
+		cname:'Mohammed Motiwala',
+		phone:'+91-7728086752',
+		email:'sponsorship[at]bits-apogee[dot]org',
+	},
+	{
+		dept:'For reception and accommodation',
+		img_url:'images/contacts/recnacc.jpg',
+		fb_link:'https://www.facebook.com/profile.php?id=1536776149',
+		cname:'Aditya Gogri',
+		phone:'+91-9772229698',
+		email:'recnacc[at]bits-apogee[dot]org',
+	},
+	{
+		dept:'For invites and correspondence',
+		img_url:'images/contacts/pcr.jpg',
+		fb_link:'https://www.facebook.com/profile.php?id=100006361090120',
+		cname:'Aditya Chauhan',
+		phone:'+91-8239822574',
+		email:'pcr[at]bits-apogee[dot]org',
+	},
+	{
+		dept:'For Publicity and Online Partnership',
+		img_url:'images/contacts/adp.jpg',
+		fb_link:'https://www.facebook.com/kunal.barapatre.31',
+		cname:'Kunal Barapatre',
+		phone:'+91-7728095594',
+		email:'adp[at]bits-apogee[dot]org',
+	},
+	{
+		dept:'For projects, events and registration',
+		img_url:'images/contacts/controls.jpg',
+		fb_link:'https://www.facebook.com/profile.php?id=100006059280033',
+		cname:'Falguni Agarwal',
+		phone:'+91-9928089204',
+		email:'controls[at]bits-apogee[dot]org',
+	},
+	{
+		dept:'For paper presentations',
+		img_url:'images/contacts/pep.jpg',
+		fb_link:'https://www.facebook.com/profile.php?id=100000505306972',
+		cname:'Aditya V. kumar',
+		phone:'+91-8385857855, +91-8058722661',
+		email:'pep[at]bits-apogee[dot]org, guestlectures[at]bits-apogee[dot]org',
+	},
+	{
+		dept:'For website and other technical queries',
+		img_url:'images/contacts/dvm.jpg',
+		fb_link:'https://www.facebook.com/pranjalONfb',
+		cname:'Pranjal Gupta',
+		phone:'+91-8094076999',
+		email:'webmaster[at]bits-apogee[dot]org',
+	}
+ ];
+
+ function contactsload()
+{
+	var dt="";
+	for(i=0;i<contacts_data.length;++i)
+	{
+		dt+= '<div class="contactinfo"><div class="contact_dept">'+contacts_data[i].dept+'</div><div style="position:relative"><img src="'+ contacts_data[i].img_url+'" class="contact_img" /><a href="'+ contacts_data[i].fb_link +'" target="_blank"><div class="fb_link" ><?xml version="1.0" ?><!DOCTYPE svg  PUBLIC "-//W3C//DTD SVG 1.1//EN"  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg enable-background="new 0 0 56.693 56.693" height="30px" id="Layer_1" version="1.1" viewBox="0 0 56.693 56.693" width="30px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css"><![CDATA[svg { cursor: pointer;transition: 200ms;transition-timing-function: ease-in-out;-webkit-transition: 200ms;-webkit-transition-timing-function: ease-in-out;fill:#fff;}svg:hover { fill: #3b5998;}]]></style><path d="M40.43,21.739h-7.645v-5.014c0-1.883,1.248-2.322,2.127-2.322c0.877,0,5.395,0,5.395,0V6.125l-7.43-0.029  c-8.248,0-10.125,6.174-10.125,10.125v5.518h-4.77v8.53h4.77c0,10.947,0,24.137,0,24.137h10.033c0,0,0-13.32,0-24.137h6.77  L40.43,21.739z"/></svg></div></a></div><div class="contact_det">'+contacts_data[i].cname +'<br>'+contacts_data[i].phone +'<br>'+contacts_data[i].email+'</div></div>';
+	}
+
+	$('#c_data').html(dt);
+}
+
+contactsload();
+
+$('.header .but_head>span').hover(function(){
+	var i = $(this).parent().index();
+	$(this).css('color',colors[i]);
+},function(){
+	$(this).css('color','#000');
+})
 </script>
 </body>
 </html>
