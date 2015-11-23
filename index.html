@@ -34,8 +34,8 @@
 	<link href='https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
 
 	<script type="text/javascript" src="js/jquery.min(1.11.1).js"></script>
-	 <!-- // <script src="https://maps.googleapis.com/maps/api/js"></script>  -->
-	<!-- // <script type="text/javascript" src="js/customMap.js"></script> -->
+	<script src="https://maps.googleapis.com/maps/api/js"></script>  
+	<script type="text/javascript" src="js/customMap.js"></script> 
 </head>
 <style>
 html,body {
@@ -579,7 +579,7 @@ object{
 #spk_head{
 	font-size: 2.5em;
 	color: red;
-	margin: 25px 0;
+	margin-top: 25px;
 	font-weight: bold;
 }
 #spk_head,#spk_desc{
@@ -916,20 +916,22 @@ p.about_content{
 
 #reg
 {
-	background-color: #5E6FC1;
+	background-color: #0c6dbf;
 }
 
 #regform 
 {
 	border: 1px solid #ddd;
-	background-color: #fff;
 	padding: 40px 25px 35px 25px;
 	text-align: left;
 	max-width: 600px;
 	left: 0;
 	right: 0;
 	margin: auto;
-	border-radius: 2px;
+	height: auto;
+    box-shadow: 1px 1px 5px 0px #333;
+    background-color: white;
+    border-radius: 3px;
 }
 #regform>form
 {
@@ -951,15 +953,15 @@ p.about_content{
 #regdes
 {
 	
-	vertical-align: top;
-	padding: 20px;
-	font-size: 2em;
-	line-height: 1.4em;
-	max-width: 900px;
-	left: 0;
-	right: 0;
-	margin: 30px auto 30px auto ;
-}
+	    vertical-align: top;
+    padding: 20px;
+    font-size: 2.8em;
+    line-height: 1.4em;
+    max-width: 1100px;
+    left: 0;
+    right: 0;
+    margin: 30px auto 30px auto;
+    color: white;}
 		/* form starting stylings ------------------------------- */
 .group        { 
   position:relative; 
@@ -1087,7 +1089,7 @@ button:hover
 	<div class="fill"></div>
 	<div class="head_content">
 		<div class="but_links">
-			<div class="but_head" style="transition-delay: 0s"><span><b>ABOUT</b></span></div>
+			<div class="but_head" style="transition-delay: 0s"><span>ABOUT</span></div>
 			<div class="but_head" style="transition-delay: 0.05s;display:none;"><span>Campus Ambassdor</span></div>
 			<div class="but_head" style="transition-delay: 0.1s"><span>EVENTS</span></div>
 			<div class="but_head" style="transition-delay: 0.15s"><span>THINK AGAIN</span></div>
@@ -1401,9 +1403,9 @@ $(document).on('click', '.speaker', function(){
 		$('#spk_details_img').css('display','block');
 		currentSpk = spk.index();
 		var spk_detail = speaker_data[spk.index()];
-		$('#spk_head').text(spk_detail["name"]);
-		$('#spk_desc').text(spk_detail["description"]);
-		$('#name_spk').text(spk_detail["name"]);
+		$('#spk_head').html(spk_detail["name"]);
+		$('#spk_desc').html(spk_detail["description"]);
+		$('#name_spk').html(spk_detail["name"]);
 		$('.spk_sta_imga').css('background-image','url("'+spk_detail["img"]+'")');
 		setTimeout(function(){
 
@@ -1509,9 +1511,9 @@ function changeSpk(forward){
 		$('#spk_details').css('background-color',colors[currentSpk]);
 		$('.spk_sta_imga').css({'background-position': ''});
 		var spk_detail = speaker_data[currentSpk];
-		$('#spk_head').text(spk_detail["name"]);
-		$('#spk_desc').text(spk_detail["description"]);
-		$('#name_spk').text(spk_detail["name"]);
+		$('#spk_head').html(spk_detail["name"]);
+		$('#spk_desc').html(spk_detail["description"]);
+		$('#name_spk').html(spk_detail["name"]);
 		$('.spk_sta_imga').css('background-image','url("'+spk_detail["img"]+'")');
 		setTimeout(function() {
 			$('#name_slide').stop(true,true).fadeIn();
@@ -1547,42 +1549,42 @@ var speaker_data =
 [
 	{
 		name:'(Late) Dr. APJ Abdul Kalam',
-		description:'The ‘Missile Man of India’, Dr. APJ Abdul Kalam was a great leader, an accomplished scientist, a passionate teacher and a true patriot. An aeronautics engineer from Madras Institute of Technology, Kalam was considered the brain of missile programme in India. He contributed in great measures to the development of ballistic missile and the launch of vehicle technology, making India one of the forerunners in missile technology in the world. His work got him several accolades including the Padma Bhushan, Padma Vibhushan and Bharat Ratna, India\'s highest civilian honour',
+		description:'<b>The ‘Missile Man of India’</b><br><br></p> Dr. APJ Abdul Kalam was a great leader, an accomplished scientist, a passionate teacher and a true patriot. An aeronautics engineer from Madras Institute of Technology, Kalam was considered the brain of missile programme in India. He contributed in great measures to the development of ballistic missile and the launch of vehicle technology, making India one of the forerunners in missile technology in the world. His work got him several accolades including the Padma Bhushan, Padma Vibhushan and Bharat Ratna, India\'s highest civilian honour</p>',
 		img:'images/phaser.png',
 	},
 	{
 		name:'Jimmy Wales',
-		description:'Today Wikipedia is the fifth most popular website in the world, and leading technology futurist and Wikipedia founder, Jimmy Wales, is one of the most sought after visionaries in business and technology. Named among the Time Magazine\'s "100 Most Influential People,"[2006] Jimmy Wales has also been acknowledged by the World Economic Forum as one of the top 250 young leaders across the world for his professional accomplishments, his commitment to society, and his potential to contribute to shaping the future of the world.',
+		description:'<b>Fouder of the ‘WIKIPEDIA‘</b><br><br></p> Today Wikipedia is the fifth most popular website in the world, and leading technology futurist and Wikipedia founder, Jimmy Wales, is one of the most sought after visionaries in business and technology. Named among the Time Magazine\'s "100 Most Influential People,"[2006] Jimmy Wales has also been acknowledged by the World Economic Forum as one of the top 250 young leaders across the world for his professional accomplishments, his commitment to society, and his potential to contribute to shaping the future of the world.</p>',
 		img:'images/phaser.png',
 	},
 	{
 		name:'Jeff Lieberman',
-		description:'We consciously perceive less than one trillionth of the reality in which we live. Our senses are doorways with invisible edges, compressing the infinite complexity of the universe into a manageable finite form. Jeff Lieberman, the host of the popular “Time Warp” series on Discovery Channel, is an avid explorer who has taken the scientific path into solving the enigma that is human consciousness. His work is an enlightening foray that exploits the edges, making us conscious of our doors of perception, and questioning the nature of perception and the universe itself.',
+		description:'<b>Host of the popular TV Series ‘Time Wrap‘</b><br><br></p> We consciously perceive less than one trillionth of the reality in which we live. Our senses are doorways with invisible edges, compressing the infinite complexity of the universe into a manageable finite form. Jeff Lieberman, the host of the popular “Time Warp” series on Discovery Channel, is an avid explorer who has taken the scientific path into solving the enigma that is human consciousness. His work is an enlightening foray that exploits the edges, making us conscious of our doors of perception, and questioning the nature of perception and the universe itself.</p>',
 		img:'images/phaser.png',
 	},
 	{
 		name:'Dr. Pawan Agrawal',
-		description:'"Believe me friends after I have spoken, you won\'t be able to move from your chair. This is my guarantee." These were the opening words of Dr. Pawan Agrawal at Think Again Conclave 2013. The CEO of Mumbai Dabbawalas, Dr. Pawan exuded sheer confidence as he spoke at length about the six-sigma and ISO certified organisation. Having scripted history with by showcasing excellence in customer care for more than a century, the dabbawalas have piqued interest and earned repute at the global level.',
+		description:'<b>‘Mumbai Dabbawalas‘</b><br><br></p> "Believe me friends after I have spoken, you won\'t be able to move from your chair. This is my guarantee." These were the opening words of Dr. Pawan Agrawal at Think Again Conclave 2013. The CEO of Mumbai Dabbawalas, Dr. Pawan exuded sheer confidence as he spoke at length about the six-sigma and ISO certified organisation. Having scripted history with by showcasing excellence in customer care for more than a century, the dabbawalas have piqued interest and earned repute at the global level.</p>',
 		img:'images/phaser.png',
 	},
 	{
 		name:'Prof. Walter Lewin',
-		description:'Prof. Walter Lewin is a renowned astrophysicist and emeritus professor at MIT, is a figure well known across the globe for his video lectures on Physics. A widely acclaimed professor, Lewin is considered to be in the same league as Feynman and Pauli when it comes to teaching.',
+		description:'<b>Physics Noble Laureate</b><br><br></p> Prof. Walter Lewin is a renowned astrophysicist and emeritus professor at MIT, is a figure well known across the globe for his video lectures on Physics. A widely acclaimed professor, Lewin is considered to be in the same league as Feynman and Pauli when it comes to teaching.</p><p>He is popular for his riveting online lectures and courses in physics. For about 15 years, Lewin was on MIT Cable TV, with every week a different 1-hour program. His lectures appeal to a vast majority of students because of his idea of using demonstrations to provide vivid clarity of the concept. His lectures are viewed over 2 million times yearly.</p>',
 		img:'images/phaser.png',
 	},
 	{
 		name:'Elena Bodnar',
-		description:'For Dr. Elena Bodnar, the director of the Chicago-based Trauma Risk Management Research Institute, the inspiration for designing the Emergency Bra, a traditional-looking brassiere that converts into two respiratory face masks in case of fire, natural disaster or terrorist attack came from two disasters. Fresh out of med school in Ukraine (then the Soviet Union) in 1986, she helped treat victims of the Chernobyl nuclear explosion. Years later, after Bodnar moved to Chicago, footage of September 11 victims using shirts to filter out debris got her thinking again about the Emergency Bra.',
+		description:'<b>Designer of the Emergency Bra</b><br><br></p> For Dr. Elena Bodnar, the director of the Chicago-based Trauma Risk Management Research Institute, the inspiration for designing the Emergency Bra, a traditional-looking brassiere that converts into two respiratory face masks in case of fire, natural disaster or terrorist attack came from two disasters. Fresh out of med school in Ukraine (then the Soviet Union) in 1986, she helped treat victims of the Chernobyl nuclear explosion. Years later, after Bodnar moved to Chicago, footage of September 11 victims using shirts to filter out debris got her thinking again about the Emergency Bra.</p>',
 		img:'images/phaser.png',
 	},
 	{
 		name:'Dr. Walter Bender',
-		description:'Dr. Walter Bender is an alumnus of MIT, a technologist and researcher who works in the field of electronic publishing, media and technology for learning. He is founder of Sugar Labs, which develops educational software used by more than three-million children in more than forty countries. He launched the era of digital news in 1992 by forming the MIT News in the Future consortium. In 2006, Bender co-founded the One Laptop per Child, a non-profit association with Nicholas Negroponte and Seymour Papert. He is the person behind the Open Leaning Program which would enable collaborative research among universities globally.',
+		description:'<b>Renowned Alumnus of the MIT Media Labs</b><br><br></p> Dr. Walter Bender is an alumnus of MIT, a technologist and researcher who works in the field of electronic publishing, media and technology for learning. He is founder of Sugar Labs, which develops educational software used by more than three-million children in more than forty countries. He launched the era of digital news in 1992 by forming the MIT News in the Future consortium. In 2006, Bender co-founded the One Laptop per Child, a non-profit association with Nicholas Negroponte and Seymour Papert. He is the person behind the Open Leaning Program which would enable collaborative research among universities globally.</p>',
 		img:'images/phaser.png',
 	},
 	{
 		name:'Dr. Bindeshwar Pathak',
-		description:'Dr. Bindeshwar Pathak is an Indian sociologist and the founder of Sulabh International, a social service organization which works to promote human rights, environmental sanitation, non-conventional sources of energy, waste management and social reforms through education. His work is considered one of the pioneer in social reform especially in the field of sanitation and hygiene, for which he has received various national and international awards.',
+		description:'<b>Founder of the Sulabh International</b><br><br></p> Dr. Bindeshwar Pathak is an Indian sociologist and the founder of Sulabh International, a social service organization which works to promote human rights, environmental sanitation, non-conventional sources of energy, waste management and social reforms through education. His work is considered one of the pioneer in social reform especially in the field of sanitation and hygiene, for which he has received various national and international awards.</p>',
 		img:'images/phaser.png',
 	},
 ];
@@ -1677,7 +1679,7 @@ sponsload();
 	{
 		dept:'General Secretary',
 		img_url:'images/contacts/gen.jpg',
-		fb_link:'https://www.facebook.com/profile.php?id=100001257596047',
+		fb_link:'https://www.facebook.com/rijul.dutta',
 		cname:'Rijul Dutta',
 		phone:'+91-8427686647',
 		email:'gensec[at]pilani.bits-pilani.ac.in',
@@ -1693,7 +1695,7 @@ sponsload();
 	{
 		dept:'For reception and accommodation',
 		img_url:'images/contacts/recnacc.jpg',
-		fb_link:'https://www.facebook.com/profile.php?id=1536776149',
+		fb_link:'https://www.facebook.com/aditya.gogri',
 		cname:'Aditya Gogri',
 		phone:'+91-9772229698',
 		email:'recnacc[at]bits-apogee[dot]org',
@@ -1717,7 +1719,7 @@ sponsload();
 	{
 		dept:'For projects, events and registration',
 		img_url:'images/contacts/controls.jpg',
-		fb_link:'https://www.facebook.com/profile.php?id=100006059280033',
+		fb_link:'https://www.facebook.com/falguni.agrawal.965',
 		cname:'Falguni Agarwal',
 		phone:'+91-9928089204',
 		email:'controls[at]bits-apogee[dot]org',
@@ -1725,7 +1727,7 @@ sponsload();
 	{
 		dept:'For paper presentations',
 		img_url:'images/contacts/pep.jpg',
-		fb_link:'https://www.facebook.com/profile.php?id=100000505306972',
+		fb_link:'https://www.facebook.com/adivijaykumar',
 		cname:'Aditya V. kumar',
 		phone:'+91-8385857855, +91-8058722661',
 		email:'pep[at]bits-apogee[dot]org, guestlectures[at]bits-apogee[dot]org',
