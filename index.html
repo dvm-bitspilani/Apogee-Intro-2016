@@ -1528,7 +1528,7 @@ function changeSpk(forward){
 	}
 	else{
 		currentSpk--;
-		if(currentSpk==0)
+		if(currentSpk<0)
 		{
 			currentSpk = speaker_data.length-1;
 		}
