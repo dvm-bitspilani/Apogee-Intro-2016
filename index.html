@@ -34,6 +34,7 @@
 	<link href='https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
 
 	<script type="text/javascript" src="js/jquery.min(1.11.1).js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
 	 <!-- // <script src="https://maps.googleapis.com/maps/api/js"></script>  -->
 	<!-- // <script type="text/javascript" src="js/customMap.js"></script> -->
 </head>
@@ -644,16 +645,29 @@ object{
 	bottom: -18px;
 	margin-left: -90px;
 	position: absolute;
-	background: currentColor;
+	background: #fff;
 }
 #name_prev,#name_next{
-	font-size: 2.5em;
+	font-size: 1.2em;
 	cursor: pointer;
+	-moz-transition: all 0.25s ease-in;
+	-webkit-transition: all 0.25s ease-in;
+	transition: all 0.25s ease-in;
+}
+#name_prev:hover
+{
+	margin-right: 7px;
+}
+#name_next:hover
+{
+	margin-left: 7px;
 }
 #name_spk{
 	display: inline-block;
 	min-width:65%;
 	font-size: 1.5em;
+	font-weight: 700;
+	color:#fff;
 }
 
 .speaker_static
@@ -832,120 +846,7 @@ object{
 }
 /*-----------------------------CONTACTS END----------------------------------*/
 
-/*About*/
-#logo-animation {
-	position: absolute;
-	left: 0px;
-	width: 30%;
-	height: 30vw;
-	border: 0;
-	margin: 100px 10%;
-}
-.logo-layers {
-	position: absolute;
-	opacity: 1;
-	margin: auto;
-	left: 0px;
-	right: 0px;
-	width: 100%;
-}
-#logo-layer1 {
-	-moz-transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.5s;
-	-webkit-transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.5s;
-	transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.5s;
-}
-#logo-layer2 {
-	transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.25s;
-	-webkit-transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.25s;
-}
-#logo-layer3 {
-	transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
-	-webkit-transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
-}
-#logo-layer4 {
-	transition: 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
-	-webkit-transition: 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
-}
-#logo-layer5 {
-	transition: 1.5s ease 3s;
-	-webkit-transition: 1.5s ease 3s;
-}
-#about.outViewPort img#logo-layer1 {
-	left: -150px;
-	opacity: 0;
-	transition: 0s ease;
-	-webkit-transition: 0s ease;
-}
-#about.outViewPort img#logo-layer2 {
-	left: 150px;
-	opacity: 0;
-	transition: 0s ease;
-	-webkit-transition: 0s ease;
-}
-#about.outViewPort img#logo-layer3 {
-	left: -150px;
-	opacity: 0;
-	transition: 0s ease;
-	-webkit-transition: 0s ease;
-}
-#about.outViewPort img#logo-layer4 {
-	left: 150px;
-	opacity: 0;
-	transition: 0s ease;
-	-webkit-transition: 0s ease;
-}
-#about.outViewPort img#logo-layer5 {
-	opacity: 0;
-	transition: 0s ease;
-	-webkit-transition: 0s ease;
-}
-#about.outViewPort > div#aboutdescription {
-	right: -150px;
-	opacity: 0;
-	transition: 0s ease;
-	-webkit-transition: 0s ease;
-}
-#aboutdescription {
-	opacity: 1;
-	transition: 0.5s ease;
-	-webkit-transition: 0.5s ease;
-	position: absolute;
-	width: 45%;
-	right: 5%;
-	top: 50px;
-	padding-bottom: 25px;
-}
-p.title1 {
-	font-family: 'Open Sans', Arial;
-	font-weight: 400;
-	color: #2f3132;
-	font-size: 2.5em;
-	text-shadow: 1px 1px white;
-	margin: 5px 0;
-}
-p.content {
-	font-family: 'Open Sans', Arial;
-	font-weight: 300;
-	font-size: 130%;
-	text-shadow: 1px 1px white;
-	color: #333;
-}
-@media screen and (max-width: 750px){
-	#logo-animation {
-		position: relative;
-		width: 45%;
-		height: 45vw;
-		margin: auto;
-	}
-	#aboutdescription {
-		position: relative;
-		margin: auto;
-		width: 70%;
-		top:0;
-		right: 0;
-	}
-}
-/*About END*/
+
 
 /*--------------------Sponsors----------------------*/
 #spons
@@ -1116,31 +1017,6 @@ input[type=number]::-webkit-outer-spin-button {
   to    { width:0; background:transparent; }
 }
 
-button
-{
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	border: none;
-	padding: 7px 12px 7px 12px;
-	font-weight: bold;
-	color: #fff;
-	background-color: #6EA3FD;
-	font-size: 1.15em;
-	line-height: 24px;
-	height: 38px;
-	width: 100px;
-	outline: none;
-	-moz-transition: all 0.2s ease-in;
-	-webkit-transition: all 0.2s ease-in;
-	transition: all 0.2s ease-in;
-}
-button:hover
-{
-	background-color: #4E7AC5;
-	font-size: 1.16em;
-}
-
 
 /*---------------------REGistration End--------------------*/
 @media screen and (max-width: 600px) {
@@ -1154,6 +1030,161 @@ button:hover
 		width: 100%;
 	}
 }
+
+
+/*PAPER AND PRESENTATION------------------------------------*/
+
+	#red0{
+		background: #95a5a6;
+		height: 100%;
+		width: 100%;
+		display: none;
+		position: absolute;
+		left: -100%;
+		top: 0;
+	}
+	#blue0{
+		background:#34495e;
+		width: 50%;
+		height: 100%;
+		top: 0;
+		right: -50%;
+		position: absolute;
+		display: none;
+	} 
+
+	.tile{
+		display: none;
+	}
+	#tile1{left: 0;}
+	#tile2{left: 50%;}
+	
+	.tile2anim{
+		position: absolute;
+		top: 10%;
+		height: 50%;
+		width: 50%;
+		display: block;
+		-moz-animation: rtol 1.5s 1;
+		-moz-animation-fill-mode:forwards;	
+		-webkit-animation: rtol 1.5s 1;
+		-webkit-animation-fill-mode:forwards;
+		animation: rtol 1.5s 1;
+		animation-fill-mode:forwards;		
+	}
+	@-webkit-keyframes rtol{
+		0%{opacity:0;}
+		100%{opacity:1;}
+	}
+	@-moz-keyframes rtol{
+		0%{opacity:0;}
+		100%{opacity:1;}
+	}
+	@keyframes rtol{
+		0%{opacity:0;}
+		100%{opacity:1;}
+	}
+	.tile1anim{
+		position: absolute;
+		top: 10%;
+		height: 50%;
+		width: 50%;
+		display: block;
+		-webkit-animation: ltor 1.5s 1;
+		-webkit-animation-fill-mode:forwards;
+		-moz-animation: ltor 1.5s 1;
+		-moz-animation-fill-mode:forwards;
+		animation: ltor 1.5s 1;
+		animation-fill-mode:forwards
+	}
+	@-webkit-keyframes ltor{
+		0%{opacity:0;}
+		100%{opacity:1;}
+	}
+	@-moz-keyframes ltor{
+		0%{opacity:0;}
+		100%{opacity:1;}
+	}
+	@keyframes ltor{
+		0%{opacity:0;}
+		100%{opacity:1;}
+	}
+	.title2{
+	    text-align: center;
+    font-size: 2.5em;
+    font-weight: 800;
+    color: #f9f9f9;
+	}
+	.content{
+		font-size: 130%;
+	    color: #333;
+	    text-align: center;
+	    padding: 20px;
+	}
+
+	.button {
+		font-weight: bold;
+		background: #009985;
+	  	color:#fff;
+		font-size: 1.2em;
+		border: none;
+		border-radius: 2px;
+		box-shadow: 1px 1px 5px #444;
+		margin: 10px auto;
+		position: relative;
+		padding: 10px 18px 10px 18px;
+	}
+
+	.button.calm {
+		-webkit-transition: 200ms background cubic-bezier(0.4, 0, 0.2, 1);
+		transition: 200ms background cubic-bezier(0.4, 0, 0.2, 1);
+		background: #009985;
+	  	color:#fff;
+	}
+
+	.calm:active
+	{
+		background:#068271;
+	}
+
+	.button.calm:hover {
+		outline: none;
+		background: #068271;
+	  color:#fff;
+	}
+	.button.calm:focus{
+	  outline: none;
+	}
+	.ripple-obj {
+		height: 100%;
+		pointer-events: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 0;
+		width: 100%;
+		fill: #0ecedd;
+	}
+
+	.ripple-obj use {
+		opacity: 0;
+	}
+	a{
+		text-decoration: none;
+	}
+	@media screen and (max-width: 680px) {
+   		.tile1anim,.tile2anim{
+   			width: 100%;
+   		}
+   		.tile1anim{top: 5%;}
+   		.tile2anim{top: 45%;left: 0 !important;}
+   		#blue0{width: 0;}
+   		.button{font-size: 0.5em;}
+   		.title2{font-size: 120%;}
+   		.content{font-size: 90%;}
+	}
+/* Paper and Presentation--------------------------------*/
+
 </style>
 <body>
 <button id="nav_but" class="c-hamburger c-hamburger--htx">
@@ -1163,12 +1194,12 @@ button:hover
 	<div class="fill"></div>
 	<div class="head_content">
 		<div class="but_links">
-			<div class="but_head" style="transition-delay: 0s"><span><b>ABOUT</b></span></div>
+			<div class="but_head" style="transition-delay: 0s"><span>ABOUT</span></div>
 			<div class="but_head" style="transition-delay: 0.05s;display:none;"><span>Campus Ambassdor</span></div>
 			<div class="but_head" style="transition-delay: 0.1s"><span>EVENTS</span></div>
 			<div class="but_head" style="transition-delay: 0.15s"><span>THINK AGAIN</span></div>
 			<div class="but_head" style="transition-delay: 0.2s"><span>REGISTRATION</span></div>
-			<div class="but_head" style="transition-delay: 0.25s"><span>PAPER & PRESENTATION</span></div>
+			<div class="but_head" style="transition-delay: 0.25s"><span onclick="pnpinit()">PAPER & PRESENTATION</span></div>
 			<div class="but_head" style="transition-delay: 0.3s"><span>SPONSORS</span></div>
 			<div class="but_head" style="transition-delay: 0.35s"><span>CONTACTS</span></div>
 		
@@ -1277,11 +1308,11 @@ button:hover
 	<div id="spk_details_img" style="display:none;">
 		<div id="spk_det_fill"></div>
 		<div id="name_slide">
-			<span id="name_prev" onclick="changeSpk(false)"> < </span>
+			<span id="name_prev" onclick="changeSpk(false)"><img src="images/leftarrow.png" style="height: 1.3em;" /></span>
 			<div id="name_spk">
 				<!-- Name of speaker -->
 			</div>
-			<span id="name_next" onclick="changeSpk(true)"> > </span>
+			<span id="name_next" onclick="changeSpk(true)"><img src="images/rightarrow.png" style="height: 1.3em;" /></span>
 		</div>
 		<div class="speaker_static abs_center">
 			<div class="spk_sta_img">
@@ -1339,7 +1370,63 @@ button:hover
 
 </div>
 
-<div id="pnp" class="div_content"></div>
+<div id="pnp" class="div_content">
+	
+	<div id="red0"></div>
+<div id="blue0"></div>
+
+		<div class="tile" id="tile1">
+		<p class="title2">PAPER PRESENTATION</p>
+		<p class="content">A widely participated event that showcases papers with topics ranging from industrial aplications to the very latest scientific innovations.</p>
+		<!-- SVG Sprite -->
+			<div style="height: 0; width: 0; position: absolute; visibility: hidden;" aria-hidden="true">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" focusable="false">
+					<symbol id="ripple_effect" viewBox="0 0 100 100">
+						<circle id="ripple_shape" cx="1" cy="1" r="1" />
+					</symbol>
+				</svg>
+			</div>
+			<!-- /end sprite -->
+		
+			<!-- button component -->
+			
+			<button id="js-ripple-btn1" class="button calm">
+				More...
+				<svg class="ripple-obj" id="js_ripple">
+					<use height="100" width="100" xlink:href="#ripple_effect" class="js-ripple"></use>
+				</svg>
+			</button>
+			
+			<!-- /end button component -->
+
+		</div>
+		<div class="tile" id="tile2">
+		<p class="title2">PROJECTS</p>
+		<p class="content">APOGEE exhibits over 550 projects in various fields of science and engineering. Based on practical application, they showcase unparalleled excellence.</p>
+		<!-- SVG Sprite -->
+			<div style="height: 0; width: 0; position: absolute; visibility: hidden;" aria-hidden="true">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" focusable="false">
+					<symbol id="ripple_effect" viewBox="0 0 100 100">
+						<circle id="ripple_shape" cx="1" cy="1" r="1" />
+					</symbol>
+				</svg>
+			</div>
+			<!-- /end sprite -->
+		
+			<!-- button component -->
+			
+			<button id="js-ripple-btn2" class="button calm">
+				More...
+				<svg class="ripple-obj" id="js_ripple">
+					<use height="100" width="100" xlink:href="#ripple_effect" class="js-ripple"></use>
+				</svg>
+			</button>
+			
+			<!-- /end button component -->
+
+		</div>
+
+</div>
 
 <div id="spons" class="div_content" >
 	<div class="div_title">SPONSORS</div>
@@ -1444,6 +1531,7 @@ function divanim()
 		});
 		$(divname[cur_con]).css('display','block');
 	}, 250);
+
 }
 
 
@@ -1596,6 +1684,7 @@ function changeSpk(forward){
 		$('.spk_sta_imga').css('background-image','url("'+spk_detail["img"]+'")');
 		setTimeout(function() {
 			$('#name_slide').stop(true,true).fadeIn();
+
 			$('#spk_head').css('opacity','1');
 			setTimeout(function() {
 				$('#spk_desc').css('opacity','1');
@@ -1834,12 +1923,79 @@ sponsload();
 
 contactsload();
 
+
+
+
 $('.header .but_head>span').hover(function(){
 	var i = $(this).parent().index();
 	$(this).css('color',colors[i]);
 },function(){
 	$(this).css('color','#000');
 })
+
+
+
+	var ripplyScott = (function() {
+
+  	function rippleAnimation(event, timing) {
+    var tl           = new TimelineMax();
+        x            = event.offsetX,
+        y            = event.offsetY,
+        w            = event.target.offsetWidth,
+        h            = event.target.offsetHeight,
+        offsetX      = Math.abs( (w / 2) - x ),
+        offsetY      = Math.abs( (h / 2) - y ),
+        deltaX       = (w / 2) + offsetX,
+        deltaY       = (h / 2) + offsetY,
+        scale_ratio  = Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2));
+
+    tl.fromTo($(this).find('.js-ripple'), timing, {
+      x: x,
+      y: y,
+      transformOrigin: '50% 50%',
+      scale: 0,
+      opacity: 1,
+      ease: Linear.easeIn
+    },{
+      scale: scale_ratio,
+      opacity: 0
+    });
+
+    return tl;
+  }
+
+  return {
+    init: function(target, timing) {
+      var button = document.getElementById(target);
+
+      button.addEventListener('click', function(event) {
+        rippleAnimation.call(this, event, timing);
+      });
+    }
+  };
+})();
+
+ripplyScott.init('js-ripple-btn1', 0.75);
+ripplyScott.init('js-ripple-btn2', 0.75);
+
+function projmasteranim(){
+	$('#red0 , #blue0').css({display:"block"});
+	$('#red0').animate({left:"0%"},500,function(){$('#blue0').animate({right:"0%"},300,function(){projectanimate();});});
+}
+
+function projectanimate(){
+	$('#tile1').addClass('tile1anim');
+	$('#tile2').addClass('tile2anim');
+}
+function pnpinit()
+{
+	$('#red0 , #blue0').css({display:"none"});
+	setTimeout(function(){projmasteranim()},1000);
+	$('#red0').css({left:"-100%"});
+	$('#blue0').css({right:"-50%"});
+	$('#tile1').removeClass('tile1anim');
+	$('#tile2').removeClass('tile2anim');	
+}
 </script>
 </body>
 </html>
