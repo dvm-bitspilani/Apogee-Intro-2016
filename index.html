@@ -36,7 +36,7 @@
 	<script type="text/javascript" src="js/jquery.min(1.11.1).js"></script>
 
 	<script src="https://maps.googleapis.com/maps/api/js"></script> 
-	<script type="text/javascript" src="js/customMap.js"></script>
+	<!-- // <script type="text/javascript" src="js/customMap.js"></script> -->
 
 </head>
 <style>
@@ -164,28 +164,31 @@
 	position: relative;
 	display: inline-block;
 	width: 250px;
-	height: 250px;
+	height: 280px;
 	padding: 10px 0;
 	overflow: hidden;
 	background-color: #eee;
 	background-position: bottom;
 	margin: 25px;
+	box-shadow: 4px 4px 20px -2px #222;
+	cursor:pointer;
 }
 .event_head{
-	font-size: 1.2em;
+	font-size: 20px;
+    line-height: 30px;
     font-weight: bold;
-    height: 75px;
-    background: red;
+    height: 60px;
     position: absolute;
     top: 0;
-    padding-top: 15px;
+    padding: 15px;
     width: 100%;
+    color:#fff;
 }
 .event_details{
 	position: absolute;
 	width: 100%;
 	left:0;
-	top: 75px;
+	top: 60px;
 	bottom:0;
 	color: #eee;
 	text-align: left;
@@ -200,6 +203,7 @@
 }
 .event_details img{
 	width: 100%;
+	height: 100%;
 }
 .eve_det_front{
 position: absolute;
@@ -218,13 +222,22 @@ position: absolute;
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background-color: #eee;
+	padding:20px;
+	background-color: #f6f6f6;
 	color: #222;
 	-webkit-transform: translateZ(-2px) rotateX(180deg);
 			transform: translateZ(-2px) rotateX(180deg);
 	overflow: hidden;
 	-webkit-transition: box-shadow 0.8s ease;
 			transition: box-shadow 0.8s ease;
+}
+.eve_det_back>div
+{
+	height: 180px;
+    overflow: hidden;
+	font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
 }
 .event_details.is-open .eve_det_front {
   pointer-events: none;
@@ -268,12 +281,12 @@ position: absolute;
 		<div class="but_links">
 			<div class="but_head" style="transition-delay: 0s"><span>ABOUT</span></div>
 			<div class="but_head" style="transition-delay: 0.05s;display:none;"><span>Campus Ambassdor</span></div>
-			<div class="but_head" style="transition-delay: 0.1s"><span>EVENTS</span></div>
+			<div class="but_head" style="transition-delay: 0.1s"><span onclick="eventdinit()">EVENTS</span></div>
 			<div class="but_head" style="transition-delay: 0.15s"><span>THINK AGAIN</span></div>
-			<div class="but_head" style="transition-delay: 0.2s"><span>REGISTRATION</span></div>
+			<div class="but_head" style="transition-delay: 0.2s"><span onclick="formup()">REGISTER</span></div>
 			<div class="but_head" style="transition-delay: 0.25s"><span onclick="pnpinit()">PAPER & PRESENTATION</span></div>
 			<div class="but_head" style="transition-delay: 0.3s"><span>SPONSORS</span></div>
-			<div class="but_head" style="transition-delay: 0.35s"><span>CONTACTS</span></div>
+			<div class="but_head" style="transition-delay: 0.35s"><span onclick="setTimeout(initMap,1000)">CONTACTS</span></div>
 		
 			<div id="social">
 
@@ -322,7 +335,7 @@ position: absolute;
 
 <div id="cam_amb" class="div_content"></div>
 
-<div id="events" class="div_content" style="display:block">
+<div id="events" class="div_content" style="display:block;background-color:#068271;">
 	<div class="div_title">Events</div>
 	<div class="contact_data">
 		<div class="event_cont slide">
@@ -332,7 +345,7 @@ position: absolute;
 					<img src="images/dhiti.jpg">
 				</div>
 				<div class="eve_det_back">
-					<p>This is pakau event.</p>
+					<div>Hackathon is an onsite mobile app building competition. Participants are required to code a mobile application on the platform and theme stated from scratch during the 12 hour overnight event. Hackers build the app in teams, enjoying pizza, coffee and refreshments overnight and the best applications are declared winners.</div>
 				</div>
 			</div>
 		</div>
@@ -343,7 +356,8 @@ position: absolute;
 					<img src="images/dhiti.jpg">
 				</div>
 				<div class="eve_det_back">
-					<p>this is a event in apogee. ob max.</p>
+					<div>Ever wondered how a mechanism works. Reverse Engineering brings you the opportunity to get your hands on the most complex mechanical units. Engineer your ways to revert the impossible.
+					The teams have to pass through an online quiz based on aptitude and automobile knowledge and further through an online case study.</div>
 				</div>
 			</div>
 		</div>
@@ -381,7 +395,7 @@ position: absolute;
 			</div>
 		</div>
 		<div class="event_cont slide">
-			<div class="event_head size">Istrike</div>
+			<div class="event_head size">I-strike</div>
 			<div class="event_details zoom">
 				<div class="eve_det_front">
 					<img src="images/dhiti.jpg">
@@ -398,7 +412,7 @@ position: absolute;
 					<img src="images/dhiti.jpg">
 				</div>
 				<div class="eve_det_back">
-					<p>this is a event in apogee. ob max.</p>
+					<div>This event presents before you existing challenges faced by these companies who seek their solutions from you. These problems, which happen to be discipline specific (one need not belong are to be solved by participants in teams of 2-4 in about a month.</div>
 				</div>
 			</div>
 		</div>
@@ -420,7 +434,7 @@ position: absolute;
 	</div>
 </div>
 <div id="spk_details" style="display:none;">
-	<div id="spk_back"> < </div>
+	<div id="spk_back"><img src="images/arrow_black.png"  /></div>
 	<div id="spk_details_img" style="display:none;">
 		<div id="spk_det_fill"></div>
 		<div id="name_slide">
@@ -530,6 +544,26 @@ position: absolute;
 
 <script type="text/javascript" src="js/main.js"></script>
 <script>
+function addeventscolor()
+{
+	var t = $('.event_head');
+	len = t.length;
+	for (i=0;i<len;++i)
+	{
+		$(t[i]).css('background-color',colors[i]);
+	}
+}
+
+$(document).ready(function(){
+	addeventscolor();
+});
+
+function eventdinit()
+{
+	$('.is-open').removeClass('is-open');
+}
+
+
 var btnFront = $('.eve_det_front'),
     btnBack = $('.eve_det_back');
 btnFront.click(function(event) {
@@ -572,6 +606,23 @@ function distance(x1, y1, x2, y2) {
     var dy = y1 - y2;
     return Math.sqrt(dx * dx + dy * dy);
 }
+</script>
+<script type="text/javascript">
+function initMap() {
+  var myLatLng = {lat: 28.364, lng: 75.587};
+
+  // Create a map object and specify the DOM element for display.
+  var map = new google.maps.Map(document.getElementById('map'), {
+    center: myLatLng,
+    scrollwheel: false,
+    zoom: 15
+  });
+
+  // Create a marker and set its position.
+var image = 'images/marker.png';
+marker = new google.maps.Marker({ position: new google.maps.LatLng(28.364, 75.5871271),map: map ,icon: image });
+}
+
 </script>
 </body>
 </html>
