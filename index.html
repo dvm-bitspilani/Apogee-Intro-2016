@@ -75,6 +75,7 @@ html,body {
 	text-align: center; 
 	display: none;
 	padding-top: 45px;
+	background-color: #f6f6f6;
 }
 
 .div_title
@@ -159,6 +160,12 @@ html,body {
 	transition: all 0.7s ease-in-out;
 	background-color: #f6f6f6;
 }
+
+.contact_dept {
+    min-height: 60px;
+    font-weight: 900;
+}
+
 .header .head_content{
 	display:none;
 }
@@ -209,7 +216,7 @@ html,body {
   font-size: 0;
   text-indent: -9999px;
   appearance: none;
-  box-shadow:0 2px 4px rgba(0,0,0,0.4);
+  box-shadow:1px 1px 3px 0px rgba(0,0,0,0.7);
   border-radius: none;
   border: none;
   cursor: pointer;
@@ -390,7 +397,7 @@ object{
 			position: relative;
     		width: 265px;
     		height: 275px;
-    		margin: 15px 25px 15px 25px;
+    		margin: 5px 25px 15px 25px;
     		cursor: pointer;
     		display: inline-block;
 
@@ -444,17 +451,18 @@ object{
 		}
 		.speaker:hover .spk_imga
 		{
-			background-position: center 125%;
+			background-position: center 10px;
 		}
 		.speakerdet
 		{
-			position: absolute;
-			bottom: 0;
-			padding: 5px;
-			padding-top:15px; 
-			text-align: center;
-			font-weight: bold;
-			width: 100%;
+			    position: absolute;
+			    bottom: 0;
+			    padding: 10px;
+			    /* padding-top: 0px; */
+			    text-align: center;
+			    font-weight: 900;
+			    font-size: 14px;
+			    width: 100%;
 		}
 		.speaker a {
 		  position: relative;
@@ -488,52 +496,52 @@ object{
 		  transform: scaleX(1);
 		}
 .speaker:hover .color0{
-	color: #becb64;
+	color: #2E7D32;
 }
 .color0:before{	
-	background-color: #becb64;
+	background-color: #2E7D32;
 }
 .speaker:hover .color1{
-	color: #ff8441;
+	color: #F4511E;
 }
 .color1:before{
-	background-color: #ff8441;
+	background-color: #F4511E;
 }
 .speaker:hover .color2{
-	color: #ea6c95;
+	color: #C51162;
 }
 .color2:before{
-	background-color: #ea6c95;
+	background-color: #C51162;
 }
 .speaker:hover .color3{
-	color: #ff5252;
+	color: #B71C1C;
 }
 .color3:before{	
-	background-color: #ff5252;
+	background-color: #B71C1C;
 }
 .speaker:hover .color4{
-	color: #6EA3FD;
+	color: #0c6dbf;
 }
 .color4:before{	
-	background-color: #6EA3FD;
+	background-color: #0c6dbf;
 }
 .speaker:hover .color5{
-	color: #ff4081;
+	color: #00695C;
 }
 .color5:before{	
-	background-color: #ff4081;
+	background-color: #00695C;
 }
 .speaker:hover .color6{
-	color: #47c2d1;
+	color: #00838F;
 }
 .color6:before{	
-	background-color: #47c2d1;
+	background-color: #00838F;
 }
 .speaker:hover .color7{
-	color: #81c684;
+	color: #3E2723;
 }
 .color7:before{	
-	background-color: #81c684;
+	background-color: #3E2723;
 }
 .speaker:hover .color8{
 	color: #915986;
@@ -586,7 +594,7 @@ object{
 	font-size: 2.5em;
 	color: red;
 	margin-top: 25px;
-	font-weight: bold;
+	font-weight: 900;
 }
 #spk_head,#spk_desc{
 	-moz-transition: opacity 0.3s ease-in;
@@ -745,9 +753,18 @@ object{
 /*-----------------------------CONTACTS----------------------------------*/
 #contacts
 {
-	background-color: #3A474A;
+	background-color: #3E2723;
 	color: white;
 	letter-spacing: 1px;
+}
+
+.confb
+{
+	fill:#fff;
+}
+.confb:hover
+{
+	fill:#3b5998;
 }
 
 .contactinfo
@@ -944,13 +961,13 @@ p.about_content{
 	right: 0;
 	margin: auto;
 	height: auto;
-    box-shadow: 1px 1px 5px 0px #333;
+    box-shadow: 1px 1px 5px 0px #111;
     background-color: white;
     border-radius: 3px;
 }
 #regform>form
 {
-	width: 300px;
+	width: 400px;
 	left:0;
 	right: 0;
 	margin: auto;
@@ -962,7 +979,7 @@ p.about_content{
 }
 #regform>form label
 {
-	width: 280px;
+	width: 380px;
 }
 
 #regdes
@@ -986,16 +1003,17 @@ input         {
   font-size:18px;
   padding:10px 10px 10px 5px;
   display:block;
-  width:300px;
+  width:400px;
   border:none;
-  border-bottom:1px solid #545454;
+  border-bottom:1px solid #ccc;
 }
 input:focus     { outline:none; }
 
 /* LABEL ======================================= */
 label          {
   color:#545454; 
-  font-size:18px;
+  font-size:15px;
+  text-transform: uppercase;
   font-weight:normal;
   position:absolute;
   pointer-events:none;
@@ -1012,7 +1030,7 @@ input:focus ~ label, input:valid ~ label     {
   color:#4E7AC5;
 }
 /* BOTTOM BARS ================================= */
-.bar  { position:relative; display:block; width:300px;  margin-top: 1px; }
+.bar  { position:relative; display:block; width:400px;  margin-top: 1px; }
 .bar:before, .bar:after   {
   content:'';
   height:2px; 
@@ -1055,6 +1073,35 @@ input[type=number]::-webkit-outer-spin-button {
 @keyframes inputHighlighter {
   from  { background:#4E7AC5; }
   to    { width:0; background:transparent; }
+}
+
+
+#regsubmit
+{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: none;
+	padding: 7px 12px 7px 12px;
+	font-weight: bold;
+	color: #fff;
+	background-color: #C62828;
+	font-size: 1.15em;
+	line-height: 24px;
+	height: 38px;
+	width: 100px;
+	border-radius: 2px;
+	cursor: pointer;
+	box-shadow: 1px 1px 2px 0px #999;
+	outline: none;
+	-moz-transition: all 0.2s ease-in;
+	-webkit-transition: all 0.2s ease-in;
+	transition: all 0.2s ease-in;
+}
+#regsubmit:hover
+{
+	background-color: #B71C1C;
+	font-size: 1.16em;
 }
 
 
@@ -1509,7 +1556,7 @@ $(document).ready(function(){
 	$('#thinkagain .contact_data').html(data);
 });
 var cur_con = 0; //0-About 7-Contacts
-var colors = ['#becb64','#ff8441','#ea6c95','#ff5252','#6EA3FD','#ff4081','#47c2d1','#81c684','#915986'];
+var colors = ['#2E7D32','#F4511E','#C51162','#B71C1C','#0c6dbf','#00695C','#00838F','#3E2723','#915986'];
 var divname = ['#about','#cam_amb','#events','#thinkagain','#reg','#pnp','#spons','#contacts'];
 var currentSpk = 0; //stores current speaker that is displayed
 
@@ -1639,7 +1686,7 @@ $(document).on('click', '.speaker', function(){
 
 				$('.spk_sta_imga').fadeIn().css({'background-position': 'center bottom'});
 			},350);
-			
+			$('#spk_head').css('color',$('#spk_details').css('background-color'));
 			$('#spk_content').fadeIn(500);
 			$('#spk_back').fadeIn(500);
 			$('#name_slide').fadeIn(500);
@@ -1735,6 +1782,7 @@ function changeSpk(forward){
 		$('.spk_sta_imga').css('background-image','url("'+spk_detail["img"]+'")');
 		setTimeout(function() {
 			$('#name_slide').stop(true,true).fadeIn();
+			$('#spk_head').css('color',$('#spk_details').css('background-color'));
 
 			$('#spk_head').css('opacity','1');
 			setTimeout(function() {
@@ -1769,22 +1817,22 @@ var speaker_data =
 	{
 		name:'(Late) Dr. APJ Abdul Kalam',
 		description:'<b>The ‘Missile Man of India’</b><br><br></p> Dr. APJ Abdul Kalam was a great leader, an accomplished scientist, a passionate teacher and a true patriot. An aeronautics engineer from Madras Institute of Technology, Kalam was considered the brain of missile programme in India. He contributed in great measures to the development of ballistic missile and the launch of vehicle technology, making India one of the forerunners in missile technology in the world. His work got him several accolades including the Padma Bhushan, Padma Vibhushan and Bharat Ratna, India\'s highest civilian honour</p>',
-		img:'images/phaser.png',
+		img:'images/speaker/apj.png',
 	},
 	{
 		name:'Jimmy Wales',
 		description:'<b>Fouder of the ‘WIKIPEDIA‘</b><br><br></p> Today Wikipedia is the fifth most popular website in the world, and leading technology futurist and Wikipedia founder, Jimmy Wales, is one of the most sought after visionaries in business and technology. Named among the Time Magazine\'s "100 Most Influential People,"[2006] Jimmy Wales has also been acknowledged by the World Economic Forum as one of the top 250 young leaders across the world for his professional accomplishments, his commitment to society, and his potential to contribute to shaping the future of the world.</p>',
-		img:'images/phaser.png',
+		img:'images/speaker/wales.png',
 	},
 	{
 		name:'Jeff Lieberman',
 		description:'<b>Host of the popular TV Series ‘Time Wrap‘</b><br><br></p> We consciously perceive less than one trillionth of the reality in which we live. Our senses are doorways with invisible edges, compressing the infinite complexity of the universe into a manageable finite form. Jeff Lieberman, the host of the popular “Time Warp” series on Discovery Channel, is an avid explorer who has taken the scientific path into solving the enigma that is human consciousness. His work is an enlightening foray that exploits the edges, making us conscious of our doors of perception, and questioning the nature of perception and the universe itself.</p>',
-		img:'images/phaser.png',
+		img:'images/speaker/jeff.png',
 	},
 	{
 		name:'Dr. Pawan Agrawal',
 		description:'<b>‘Mumbai Dabbawalas‘</b><br><br></p> "Believe me friends after I have spoken, you won\'t be able to move from your chair. This is my guarantee." These were the opening words of Dr. Pawan Agrawal at Think Again Conclave 2013. The CEO of Mumbai Dabbawalas, Dr. Pawan exuded sheer confidence as he spoke at length about the six-sigma and ISO certified organisation. Having scripted history with by showcasing excellence in customer care for more than a century, the dabbawalas have piqued interest and earned repute at the global level.</p>',
-		img:'images/phaser.png',
+		img:'images/speaker/pawan.png',
 	},
 	{
 		name:'Prof. Walter Lewin',
@@ -1799,12 +1847,12 @@ var speaker_data =
 	{
 		name:'Dr. Walter Bender',
 		description:'<b>Renowned Alumnus of the MIT Media Labs</b><br><br></p> Dr. Walter Bender is an alumnus of MIT, a technologist and researcher who works in the field of electronic publishing, media and technology for learning. He is founder of Sugar Labs, which develops educational software used by more than three-million children in more than forty countries. He launched the era of digital news in 1992 by forming the MIT News in the Future consortium. In 2006, Bender co-founded the One Laptop per Child, a non-profit association with Nicholas Negroponte and Seymour Papert. He is the person behind the Open Leaning Program which would enable collaborative research among universities globally.</p>',
-		img:'images/phaser.png',
+		img:'images/speaker/bender.png',
 	},
 	{
 		name:'Dr. Bindeshwar Pathak',
 		description:'<b>Founder of the Sulabh International</b><br><br></p> Dr. Bindeshwar Pathak is an Indian sociologist and the founder of Sulabh International, a social service organization which works to promote human rights, environmental sanitation, non-conventional sources of energy, waste management and social reforms through education. His work is considered one of the pioneer in social reform especially in the field of sanitation and hygiene, for which he has received various national and international awards.</p>',
-		img:'images/phaser.png',
+		img:'images/speaker/bin_pat.png',
 	},
 ];
 
@@ -1891,7 +1939,7 @@ sponsload();
 		dept:'President',
 		img_url:'images/contacts/prez.jpg',
 		fb_link:'https://www.facebook.com/akhil.reddy.148',
-		cname:'Akhil Reddy',
+		cname:'AKHIL REDDY',
 		phone:'+91-7728835792',
 		email:'president[at]pilani.bits-pilani.ac.in',
 	},
@@ -1899,7 +1947,7 @@ sponsload();
 		dept:'General Secretary',
 		img_url:'images/contacts/gen.jpg',
 		fb_link:'https://www.facebook.com/rijul.dutta',
-		cname:'Rijul Dutta',
+		cname:'RIJUL DUTTA',
 		phone:'+91-8427686647',
 		email:'gensec[at]pilani.bits-pilani.ac.in',
 	},
@@ -1907,7 +1955,7 @@ sponsload();
 		dept:'For sponsorship and marketing',
 		img_url:'images/contacts/spons.jpg',
 		fb_link:'https://www.facebook.com/mohammed.motiwala1',
-		cname:'Mohammed Motiwala',
+		cname:'MOHAMMED MOTIWALA',
 		phone:'+91-7728086752',
 		email:'sponsorship[at]bits-apogee[dot]org',
 	},
@@ -1915,7 +1963,7 @@ sponsload();
 		dept:'For reception and accommodation',
 		img_url:'images/contacts/recnacc.jpg',
 		fb_link:'https://www.facebook.com/aditya.gogri',
-		cname:'Aditya Gogri',
+		cname:'ADITYA GOGRI',
 		phone:'+91-9772229698',
 		email:'recnacc[at]bits-apogee[dot]org',
 	},
@@ -1923,7 +1971,7 @@ sponsload();
 		dept:'For invites and correspondence',
 		img_url:'images/contacts/pcr.jpg',
 		fb_link:'https://www.facebook.com/profile.php?id=100006361090120',
-		cname:'Aditya Chauhan',
+		cname:'ADITYA CHAUHAN',
 		phone:'+91-8239822574',
 		email:'pcr[at]bits-apogee[dot]org',
 	},
@@ -1931,7 +1979,7 @@ sponsload();
 		dept:'For Publicity and Online Partnership',
 		img_url:'images/contacts/adp.jpg',
 		fb_link:'https://www.facebook.com/kunal.barapatre.31',
-		cname:'Kunal Barapatre',
+		cname:'KUNAL BARAPATRE',
 		phone:'+91-7728095594',
 		email:'adp[at]bits-apogee[dot]org',
 	},
@@ -1939,23 +1987,23 @@ sponsload();
 		dept:'For projects, events and registration',
 		img_url:'images/contacts/controls.jpg',
 		fb_link:'https://www.facebook.com/falguni.agrawal.965',
-		cname:'Falguni Agarwal',
+		cname:'FALGUNI AGARWAL',
 		phone:'+91-9928089204',
 		email:'controls[at]bits-apogee[dot]org',
 	},
 	{
-		dept:'For paper presentations',
+		dept:'For paper presentations and Guest Lectures',
 		img_url:'images/contacts/pep.jpg',
 		fb_link:'https://www.facebook.com/adivijaykumar',
-		cname:'Aditya V. kumar',
+		cname:'ADITYA V KUMAR',
 		phone:'+91-8385857855, +91-8058722661',
 		email:'pep[at]bits-apogee[dot]org, guestlectures[at]bits-apogee[dot]org',
 	},
 	{
-		dept:'For website and other technical queries',
+		dept:'For website and online registration queries',
 		img_url:'images/contacts/dvm.jpg',
 		fb_link:'https://www.facebook.com/pranjalONfb',
-		cname:'Pranjal Gupta',
+		cname:'PRANJAL GUPTA',
 		phone:'+91-8094076999',
 		email:'webmaster[at]bits-apogee[dot]org',
 	}
@@ -1966,7 +2014,7 @@ sponsload();
 	var dt="";
 	for(i=0;i<contacts_data.length;++i)
 	{
-		dt+= '<div class="contactinfo"><div class="contact_dept">'+contacts_data[i].dept+'</div><div style="position:relative"><img src="'+ contacts_data[i].img_url+'" class="contact_img" /><a href="'+ contacts_data[i].fb_link +'" target="_blank"><div class="fb_link" ><?xml version="1.0" ?><!DOCTYPE svg  PUBLIC "-//W3C//DTD SVG 1.1//EN"  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="confb" enable-background="new 0 0 56.693 56.693" height="30px" id="Layer_1" version="1.1" viewBox="0 0 56.693 56.693" width="30px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css"><![CDATA[svg .confb{ cursor: pointer;transition: 200ms;transition-timing-function: ease-in-out;-webkit-transition: 200ms;-webkit-transition-timing-function: ease-in-out;fill:#fff;}svg:hover .confb { fill: #3b5998;}]]></style><path d="M40.43,21.739h-7.645v-5.014c0-1.883,1.248-2.322,2.127-2.322c0.877,0,5.395,0,5.395,0V6.125l-7.43-0.029  c-8.248,0-10.125,6.174-10.125,10.125v5.518h-4.77v8.53h4.77c0,10.947,0,24.137,0,24.137h10.033c0,0,0-13.32,0-24.137h6.77  L40.43,21.739z"/></svg></div></a></div><div class="contact_det">'+contacts_data[i].cname +'<br>'+contacts_data[i].phone +'<br>'+contacts_data[i].email+'</div></div>';
+		dt+= '<div class="contactinfo"><div class="contact_dept">'+contacts_data[i].dept+'</div><div style="position:relative"><img src="'+ contacts_data[i].img_url+'" class="contact_img" /><a href="'+ contacts_data[i].fb_link +'" target="_blank"><div class="fb_link" ><?xml version="1.0" ?><!DOCTYPE svg  PUBLIC "-//W3C//DTD SVG 1.1//EN"  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg  class="confb" enable-background="new 0 0 56.693 56.693" height="30px" id="Layer_1" version="1.1" viewBox="0 0 56.693 56.693" width="30px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css"><![CDATA[svg .confb{ cursor: pointer;transition: 150ms;transition-timing-function: ease-in-out;-webkit-transition: 150ms;-webkit-transition-timing-function: ease-in-out;fill:#fff;} .confb:hover{ fill: #3b5998;}]]></style><path d="M40.43,21.739h-7.645v-5.014c0-1.883,1.248-2.322,2.127-2.322c0.877,0,5.395,0,5.395,0V6.125l-7.43-0.029  c-8.248,0-10.125,6.174-10.125,10.125v5.518h-4.77v8.53h4.77c0,10.947,0,24.137,0,24.137h10.033c0,0,0-13.32,0-24.137h6.77  L40.43,21.739z"/></svg></div></a></div><div class="contact_det"><b>'+contacts_data[i].cname +'</b><br>'+contacts_data[i].phone +'<br>'+contacts_data[i].email+'</div></div>';
 	}
 
 	$('#c_data').html(dt);
