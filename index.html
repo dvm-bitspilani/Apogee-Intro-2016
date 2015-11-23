@@ -31,7 +31,7 @@
 
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<!-- <link href='https://fonts.googleapis.com/css?family=Roboto:700' rel='stylesheet' type='text/css'> -->
-	<link href='https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+	<!-- <link href='https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'> -->
 
 	<script type="text/javascript" src="js/jquery.min(1.11.1).js"></script>
 
@@ -40,7 +40,122 @@
 
 </head>
 <style>
+@-webkit-keyframes slide {
+  0% {
+    -webkit-transform: scale(0, 0) translateY(0);
+            transform: scale(0, 0) translateY(0);
+  }
+  55%, 100% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+}
+@keyframes slide {
+  0% {
+    -webkit-transform: scale(0, 0) translateY(0);
+            transform: scale(0, 0) translateY(0);
+  }
+  55%, 100% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+}
+@-webkit-keyframes size {
+  0%, 55% {
+    -webkit-transform: scale(1, 0);
+            transform: scale(1, 0);
+  }
+  65%, 100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}
+@keyframes size {
+  0%, 55% {
+    -webkit-transform: scale(1, 0);
+            transform: scale(1, 0);
+  }
+  65%, 100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}
+@-webkit-keyframes zoom {
+  0%, 55% {
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0);
+  }
+  70%, 100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}
+@keyframes zoom {
+  0%, 55% {
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0);
+  }
+  70%, 100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}
+.slide{
+	-webkit-transform: scale(0, 0) translateY(0);
+            transform: scale(0, 0) translateY(0);
+	-webkit-animation-name: slide;
+			animation-name: slide;
+	-webkit-animation-timing-function: ease;
+			animation-timing-function: ease;
+	-webkit-animation-duration: 4s;
+			animation-duration: 4s;
+			animation-fill-mode: forwards;
+}
+.zoom{
+	-webkit-animation-name: zoom;
+			animation-name: zoom;
+	-webkit-animation-duration: 4s;
+			animation-duration: 4s;
+}
+.size{
+-webkit-transform: scale(1, 0);
+            transform: scale(1, 0);
+  -webkit-transform-origin: 0 0;
+      -ms-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-animation-name: size;
+          animation-name: size;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+          animation-fill-mode: forwards;
+}
 
+.event_cont:nth-child(2), .event_cont:nth-child(2) .size, .event_cont:nth-child(2) .zoom {
+  -webkit-animation-delay: .2s;
+          animation-delay: .2s;
+}
+.event_cont:nth-child(3), .event_cont:nth-child(3) .size, .event_cont:nth-child(3) .zoom {
+  -webkit-animation-delay: .4s;
+          animation-delay: .4s;
+}
+.event_cont:nth-child(4), .event_cont:nth-child(4) .size, .event_cont:nth-child(4) .zoom {
+  -webkit-animation-delay: .6s;
+          animation-delay: .6s;
+}
+.event_cont:nth-child(5), .event_cont:nth-child(5) .size, .event_cont:nth-child(5) .zoom {
+  -webkit-animation-delay: .8s;
+          animation-delay: .8s;
+}
+.event_cont:nth-child(6), .event_cont:nth-child(6) .size, .event_cont:nth-child(6) .zoom {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+.event_cont:nth-child(7), .event_cont:nth-child(7) .size, .event_cont:nth-child(7) .zoom {
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+}
 /*Events*/
 #events{
 	background-color: #3a3035;
@@ -53,37 +168,93 @@
 	padding: 10px 0;
 	overflow: hidden;
 	background-color: #eee;
-	background: url('images/dhiti.jpg');
 	background-position: bottom;
 	margin: 25px;
 }
 .event_head{
 	font-size: 1.2em;
-	font-weight: bold;
-	height: 75px;
+    font-weight: bold;
+    height: 75px;
+    background: red;
+    position: absolute;
+    top: 0;
+    padding-top: 15px;
+    width: 100%;
 }
 .event_details{
 	position: absolute;
-	opacity: 0;
 	width: 100%;
 	left:0;
 	top: 75px;
 	bottom:0;
 	color: #eee;
 	text-align: left;
-	padding: 10px;
-	background-color: rgba(0,0,0,0.7);
-	transform: scale(0.9);
-	transition: all 0.2s ease-in,opacity 0.3s linear;
+	-webkit-transition: width 0.8s cubic-bezier(0.23, 1, 0.32, 1), height 0.8s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          transition: width 0.8s cubic-bezier(0.23, 1, 0.32, 1), height 0.8s cubic-bezier(0.23, 1, 0.32, 1), transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform-origin: 50% 50%;
+      -ms-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
 
 }
-.events_fill{
+.event_details img{
+	width: 100%;
+}
+.eve_det_front{
+position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	line-height: 80px;
+	background-color: #F44336;
+	color: #fff;
+	cursor: pointer;
+	-webkit-backface-visibility: hidden;
+	   -moz-backface-visibility: hidden;
+			backface-visibility: hidden;
+}
+.eve_det_back{
 	position: absolute;
-
+	width: 100%;
+	height: 100%;
+	background-color: #eee;
+	color: #222;
+	-webkit-transform: translateZ(-2px) rotateX(180deg);
+			transform: translateZ(-2px) rotateX(180deg);
+	overflow: hidden;
+	-webkit-transition: box-shadow 0.8s ease;
+			transition: box-shadow 0.8s ease;
 }
-.event_cont:hover>.event_details{
-	opacity: 1;
-	transform: scale(1);
+.event_details.is-open .eve_det_front {
+  pointer-events: none;
+  line-height: 160px;
+}
+.event_details[data-direction="left"] .eve_det_back,
+.event_details[data-direction="right"] .eve_det_back {
+  -webkit-transform: translateZ(-2px) rotateY(180deg);
+          transform: translateZ(-2px) rotateY(180deg);
+}
+
+
+.event_details[data-direction="top"].is-open {
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+}
+
+.event_details[data-direction="right"].is-open {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.event_details[data-direction="bottom"].is-open {
+  -webkit-transform: rotateX(-180deg);
+          transform: rotateX(-180deg);
+}
+
+.event_details[data-direction="left"].is-open {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
 }
 /*Events End*/
 </style>
@@ -139,7 +310,7 @@
 	<div id="fulltransit"></div>
 </div>
 
-<div id="about" class="div_content"  style="display:block;">
+<div id="about" class="div_content"  style="display:none;">
 	<div id="logo">
 		<img src="images/logo.png" alt="APOGEE">
 	</div>
@@ -151,36 +322,85 @@
 
 <div id="cam_amb" class="div_content"></div>
 
-<div id="events" class="div_content">
+<div id="events" class="div_content" style="display:block">
 	<div class="div_title">Events</div>
 	<div class="contact_data">
-		<div class="event_cont">
-			<div class="event_head">Hackthon</div>
-			<div class="event_details">This is a very good event. and you should come to this event for sure.</div>
+		<div class="event_cont slide">
+			<div class="event_head size">Hackthon</div>
+			<div class="event_details zoom">
+				<div class="eve_det_front">
+					<img src="images/dhiti.jpg">
+				</div>
+				<div class="eve_det_back">
+					<p>This is pakau event.</p>
+				</div>
+			</div>
 		</div>
-		<div class="event_cont">
-			<div class="event_head">Reverse Engineering</div>
-			<div class="event_details">This is a very good event.</div>
+		<div class="event_cont slide">
+			<div class="event_head size">Reverse Engineering</div>
+			<div class="event_details zoom">
+				<div class="eve_det_front">
+					<img src="images/dhiti.jpg">
+				</div>
+				<div class="eve_det_back">
+					<p>this is a event in apogee. ob max.</p>
+				</div>
+			</div>
 		</div>
-		<div class="event_cont">
-			<div class="event_head">Dhiti</div>
-			<div class="event_details">This is a very good event.</div>
+		<div class="event_cont slide">
+			<div class="event_head size">Dhiti</div>
+			<div class="event_details zoom">
+				<div class="eve_det_front">
+					<img src="images/dhiti.jpg">
+				</div>
+				<div class="eve_det_back">
+					<p>this is a event in apogee. ob max.</p>
+				</div>
+			</div>
 		</div>
-		<div class="event_cont">
-			<div class="event_head">FTGP</div>
-			<div class="event_details">This is a very good event.</div>
+		<div class="event_cont slide">
+			<div class="event_head size">FTGP</div>
+			<div class="event_details zoom">
+				<div class="eve_det_front">
+					<img src="images/dhiti.jpg">
+				</div>
+				<div class="eve_det_back">
+					<p>this is a event in apogee. ob max.</p>
+				</div>
+			</div>
 		</div>
-		<div class="event_cont">
-			<div class="event_head">RAW</div>
-			<div class="event_details">This is a very good event.</div>
+		<div class="event_cont slide">
+			<div class="event_head size">RAW</div>
+			<div class="event_details zoom">
+				<div class="eve_det_front">
+					<img src="images/dhiti.jpg">
+				</div>
+				<div class="eve_det_back">
+					<p>this is a event in apogee. ob max.</p>
+				</div>
+			</div>
 		</div>
-		<div class="event_cont">
-			<div class="event_head">Istrike</div>
-			<div class="event_details">This is a very good event.</div>
+		<div class="event_cont slide">
+			<div class="event_head size">Istrike</div>
+			<div class="event_details zoom">
+				<div class="eve_det_front">
+					<img src="images/dhiti.jpg">
+				</div>
+				<div class="eve_det_back">
+					<p>this is a event in apogee. ob max.</p>
+				</div>
+			</div>
 		</div>
-		<div class="event_cont">
-			<div class="event_head">AIC</div>
-			<div class="event_details">This is a very good event.</div>
+		<div class="event_cont slide">
+			<div class="event_head size">AIC</div>
+			<div class="event_details zoom">
+				<div class="eve_det_front">
+					<img src="images/dhiti.jpg">
+				</div>
+				<div class="eve_det_back">
+					<p>this is a event in apogee. ob max.</p>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
@@ -262,8 +482,6 @@
 			</form>
 		</div>
 	</div>
-
-
 </div>
 
 <div id="pnp" class="div_content">
@@ -289,7 +507,6 @@
 		</a>
 
 		</div>
-
 </div>
 
 <div id="spons" class="div_content" >
@@ -313,6 +530,48 @@
 
 <script type="text/javascript" src="js/main.js"></script>
 <script>
+var btnFront = $('.eve_det_front'),
+    btnBack = $('.eve_det_back');
+btnFront.click(function(event) {
+	var btn = $(this).parent();
+    var mx = event.clientX - btn.offsetLeft,
+        my = event.clientY - btn.offsetTop;
+    var w = btn.offsetWidth,
+        h = btn.offsetHeight;
+    var directions = [{
+        id: 'top',
+        x: w / 2,
+        y: 0
+    }, {
+        id: 'right',
+        x: w,
+        y: h / 2
+    }, {
+        id: 'bottom',
+        x: w / 2,
+        y: h
+    }, {
+        id: 'left',
+        x: 0,
+        y: h / 2
+    }];
+    directions.sort(function(a, b) {
+        return distance(mx, my, a.x, a.y) - distance(mx, my, b.x,
+            b.y);
+    });
+    btn.attr('data-direction', directions.shift().id);
+    btn.addClass('is-open');
+});
+btnBack.click(function(event) {
+	var btn = $(this).parent();
+    btn.removeClass('is-open');
+});
+
+function distance(x1, y1, x2, y2) {
+    var dx = x1 - x2;
+    var dy = y1 - y2;
+    return Math.sqrt(dx * dx + dy * dy);
+}
 </script>
 </body>
 </html>
