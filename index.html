@@ -833,117 +833,41 @@ object{
 /*-----------------------------CONTACTS END----------------------------------*/
 
 /*About*/
-#logo-animation {
-	position: absolute;
-	left: 0px;
-	width: 30%;
-	height: 30vw;
-	border: 0;
-	margin: 100px 10%;
+#about{
+	background-color: #2a0d16;
+	color: white;
 }
-.logo-layers {
-	position: absolute;
-	opacity: 1;
-	margin: auto;
-	left: 0px;
-	right: 0px;
-	width: 100%;
+#logo{
+	position: relative;
+	margin: 25px auto;
 }
-#logo-layer1 {
-	-moz-transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.5s;
-	-webkit-transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.5s;
-	transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.5s;
-}
-#logo-layer2 {
-	transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.25s;
-	-webkit-transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.25s;
-}
-#logo-layer3 {
-	transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
-	-webkit-transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
-}
-#logo-layer4 {
-	transition: 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
-	-webkit-transition: 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
-}
-#logo-layer5 {
-	transition: 1.5s ease 3s;
-	-webkit-transition: 1.5s ease 3s;
-}
-#about.outViewPort img#logo-layer1 {
-	left: -150px;
-	opacity: 0;
-	transition: 0s ease;
-	-webkit-transition: 0s ease;
-}
-#about.outViewPort img#logo-layer2 {
-	left: 150px;
-	opacity: 0;
-	transition: 0s ease;
-	-webkit-transition: 0s ease;
-}
-#about.outViewPort img#logo-layer3 {
-	left: -150px;
-	opacity: 0;
-	transition: 0s ease;
-	-webkit-transition: 0s ease;
-}
-#about.outViewPort img#logo-layer4 {
-	left: 150px;
-	opacity: 0;
-	transition: 0s ease;
-	-webkit-transition: 0s ease;
-}
-#about.outViewPort img#logo-layer5 {
-	opacity: 0;
-	transition: 0s ease;
-	-webkit-transition: 0s ease;
-}
-#about.outViewPort > div#aboutdescription {
-	right: -150px;
-	opacity: 0;
-	transition: 0s ease;
-	-webkit-transition: 0s ease;
+#logo img{
+	width: 400px;
+	min-width: 25%;
+	max-width: 85%;
 }
 #aboutdescription {
 	opacity: 1;
-	transition: 0.5s ease;
-	-webkit-transition: 0.5s ease;
-	position: absolute;
-	width: 45%;
-	right: 5%;
-	top: 50px;
 	padding-bottom: 25px;
+	position: relative;
+	margin: auto;
+	width: 70%;
 }
 p.title1 {
 	font-family: 'Open Sans', Arial;
 	font-weight: 400;
-	color: #2f3132;
-	font-size: 2.5em;
+	font-size: 3em;
 	text-shadow: 1px 1px white;
 	margin: 5px 0;
 }
-p.content {
+p.about_content{
 	font-family: 'Open Sans', Arial;
 	font-weight: 300;
-	font-size: 130%;
-	text-shadow: 1px 1px white;
-	color: #333;
+	font-size: 1.5em;
+	text-shadow: 1px 1px #250911;
 }
 @media screen and (max-width: 750px){
-	#logo-animation {
-		position: relative;
-		width: 45%;
-		height: 45vw;
-		margin: auto;
-	}
-	#aboutdescription {
-		position: relative;
-		margin: auto;
-		width: 70%;
-		top:0;
-		right: 0;
-	}
+	
 }
 /*About END*/
 
@@ -1207,13 +1131,9 @@ button:hover
 	<div id="fulltransit"></div>
 </div>
 
-<div id="about" class="div_content"  style="display:none;">
-	<div id="logo-animation">
-		<img id="logo-layer1" class="logo-layers" src="images/logo_layers/layer 1.png">
-		<img id="logo-layer2" class="logo-layers" src="images/logo_layers/layer 2.png">
-		<img id="logo-layer3" class="logo-layers" src="images/logo_layers/layer 3.png">
-		<img id="logo-layer4" class="logo-layers" src="images/logo_layers/layer 4.png">
-		<img id="logo-layer5" class="logo-layers" src="images/logo_layers/layer 5.png">
+<div id="about" class="div_content"  style="display:block;">
+	<div id="logo">
+		<img src="images/logo.png" alt="APOGEE">
 	</div>
 	<div id="aboutdescription">
 		<p class="title1" id="aboutTitle">What is APOGEE ?</p>
@@ -1257,7 +1177,7 @@ button:hover
 	</div>
 </div>
 
-<div id="thinkagain" class="div_content" style="display:block;">
+<div id="thinkagain" class="div_content" style="display:none;">
 	<div class="contact_data">
 		<!-- elements added dynamically -->
 		<!-- <div class="speaker">
@@ -1269,7 +1189,6 @@ button:hover
 				<a href="">PHASER</a>
 			</div>
 		</div> -->
-		https://github.com/smitpatwa/Apogee-Intro-2016.git
 	</div>
 </div>
 <div id="spk_details" style="display:none;">
@@ -1434,7 +1353,7 @@ $('.but_head > span').click(function(){
 
 function divanim()
 {
-	setTimeout(function(){ 
+	setTimeout(function(){
 		$('#ta_anim').css('display','block');
 		$('#halftransit').animate({'left':'-250vw'},800);
 		$('#fulltransit').animate({'left':'-150vw'},800,function(){
