@@ -86,51 +86,6 @@ html,body {
 	display: none;
 }
 
-/*Events*/
-#events{
-	background-color: #3a3035;
-}
-.event_cont{
-	position: relative;
-	display: inline-block;
-	width: 250px;
-	height: 250px;
-	padding: 10px 0;
-	overflow: hidden;
-	background-color: #eee;
-	background: url('images/dhiti.jpg');
-	background-position: bottom;
-	margin: 25px;
-}
-.event_head{
-	font-size: 1.2em;
-	font-weight: bold;
-	height: 75px;
-}
-.event_details{
-	position: absolute;
-	opacity: 0;
-	width: 100%;
-	left:0;
-	top: 75px;
-	bottom:0;
-	color: #eee;
-	text-align: left;
-	padding: 10px;
-	background-color: rgba(0,0,0,0.7);
-	transform: scale(0.9);
-	transition: all 0.2s ease-in,opacity 0.3s linear;
-
-}
-.events_fill{
-	position: absolute;
-
-}
-.event_cont:hover>.event_details{
-	opacity: 1;
-	transform: scale(1);
-}
-/*Events End*/
 /*Nav Bar*/
 .header {
 	display: none;
@@ -1286,6 +1241,51 @@ input[type=number]::-webkit-outer-spin-button {
 	}
 /* Paper and Presentation--------------------------------*/
 
+/*Events*/
+#events{
+	background-color: #3a3035;
+}
+.event_cont{
+	position: relative;
+	display: inline-block;
+	width: 250px;
+	height: 250px;
+	padding: 10px 0;
+	overflow: hidden;
+	background-color: #eee;
+	background: url('images/dhiti.jpg');
+	background-position: bottom;
+	margin: 25px;
+}
+.event_head{
+	font-size: 1.2em;
+	font-weight: bold;
+	height: 75px;
+}
+.event_details{
+	position: absolute;
+	opacity: 0;
+	width: 100%;
+	left:0;
+	top: 75px;
+	bottom:0;
+	color: #eee;
+	text-align: left;
+	padding: 10px;
+	background-color: rgba(0,0,0,0.7);
+	transform: scale(0.9);
+	transition: all 0.2s ease-in,opacity 0.3s linear;
+
+}
+.events_fill{
+	position: absolute;
+
+}
+.event_cont:hover>.event_details{
+	opacity: 1;
+	transform: scale(1);
+}
+/*Events End*/
 </style>
 <body>
 <button id="nav_but" class="c-hamburger c-hamburger--htx">
