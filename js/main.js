@@ -288,12 +288,12 @@ var speaker_data =
 	{
 		name:'Prof. Walter Lewin',
 		description:'<b>Physics Noble Laureate</b><br><br></p> Prof. Walter Lewin is a renowned astrophysicist and emeritus professor at MIT, is a figure well known across the globe for his video lectures on Physics. A widely acclaimed professor, Lewin is considered to be in the same league as Feynman and Pauli when it comes to teaching.</p><p>He is popular for his riveting online lectures and courses in physics. For about 15 years, Lewin was on MIT Cable TV, with every week a different 1-hour program. His lectures appeal to a vast majority of students because of his idea of using demonstrations to provide vivid clarity of the concept. His lectures are viewed over 2 million times yearly.</p>',
-		img:'images/phaser.png',
+		img:'images/speaker/lewin.png',
 	},
 	{
 		name:'Elena Bodnar',
 		description:'<b>Designer of the Emergency Bra</b><br><br></p> For Dr. Elena Bodnar, the director of the Chicago-based Trauma Risk Management Research Institute, the inspiration for designing the Emergency Bra, a traditional-looking brassiere that converts into two respiratory face masks in case of fire, natural disaster or terrorist attack came from two disasters. Fresh out of med school in Ukraine (then the Soviet Union) in 1986, she helped treat victims of the Chernobyl nuclear explosion. Years later, after Bodnar moved to Chicago, footage of September 11 victims using shirts to filter out debris got her thinking again about the Emergency Bra.</p>',
-		img:'images/phaser.png',
+		img:'images/speaker/elena.png',
 	},
 	{
 		name:'Dr. Walter Bender',
@@ -510,4 +510,12 @@ function pnpinit()
 	$('#blue0').css({right:"-50%"});
 	$('#tile1').removeClass('tile1anim');
 	$('#tile2').removeClass('tile2anim');	
+}
+
+function formup()
+{
+	$('#regform').css({'opacity':'','margin-top':''});
+	setTimeout(function(){
+		$('#regform').animate({'opacity':'1','margin-top':'0'},800);
+	},1100);
 }
