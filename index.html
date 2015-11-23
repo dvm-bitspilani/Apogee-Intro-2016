@@ -5,7 +5,7 @@
 	<title>APOGEE 16 INTRO</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<!-- <link href='https://fonts.googleapis.com/css?family=Roboto:700' rel='stylesheet' type='text/css'> -->
-	<link href='https://fonts.googleapis.com/css?family=Raleway:400,900' rel='stylesheet' type='text/css'>
+	<!-- <link href='https://fonts.googleapis.com/css?family=Raleway:400,900' rel='stylesheet' type='text/css'> -->
 	<script type="text/javascript" src="js/jquery.min(1.11.1).js"></script>
 	 <!-- // <script src="https://maps.googleapis.com/maps/api/js"></script>  -->
 	<!-- // <script type="text/javascript" src="js/customMap.js"></script> -->
@@ -542,6 +542,11 @@ object{
 	color: red;
 	margin: 25px 0;
 	font-weight: bold;
+}
+#spk_head,#spk_desc{
+	-moz-transition: opacity 0.3s ease-in;
+    -webkit-transition: opacity 0.3s ease-in;
+    transition: opacity 0.3s ease-in;
 }
 
 #spk_back{
@@ -1202,6 +1207,7 @@ button:hover
 				<a href="">PHASER</a>
 			</div>
 		</div> -->
+		https://github.com/smitpatwa/Apogee-Intro-2016.git
 	</div>
 </div>
 <div id="spk_details" style="display:none;">
@@ -1467,7 +1473,6 @@ function spk_details_init(){
 }
 var spk_details_on = false;
 function changeSpk(forward){
-	console.log(forward);
 	if(forward){
 		currentSpk++;
 		if(currentSpk==speaker_data.length)
@@ -1501,6 +1506,8 @@ function changeSpk(forward){
 	});
 	$('.spk_sta_imga').css('opacity','0');
 	$('#name_slide').fadeOut(100);
+	$('#spk_head').css('opacity','0');
+	$('#spk_desc').css('opacity','0');
 	setTimeout(function() {
 		$('.spk_sta_imgc').css({	
 			  '-webkit-transform' : 'scale(1)',
@@ -1527,10 +1534,14 @@ function changeSpk(forward){
 		$('.spk_sta_imga').css('background-image','url("'+spk_detail["img"]+'")');
 		setTimeout(function() {
 			$('#name_slide').fadeIn();
+			$('#spk_head').css('opacity','1');
+			setTimeout(function() {
+				$('#spk_desc').css('opacity','1');
+			}, 150);
 			$('.spk_sta_imga').css('opacity','1');
 			$('.spk_sta_imga').css({'background-position': 'center bottom'});
 		}, 250);
-	}, 250);
+	}, 300);
 }
 function thinkagain_reset(spk) 
 {
