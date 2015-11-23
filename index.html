@@ -1130,7 +1130,17 @@ button:hover
 
 
 /*---------------------REGistration End--------------------*/
-
+@media screen and (max-width: 600px) {
+	#spk_content_cont{
+		left: -100vw;
+		position: relative;
+		width: 100%;
+	}	
+	#spk_details_img{
+		position: relative;
+		width: 100%;
+	}
+}
 </style>
 <body>
 <button id="nav_but" class="c-hamburger c-hamburger--htx">
@@ -1240,17 +1250,6 @@ button:hover
 </div>
 <div id="spk_details" style="display:none;">
 	<div id="spk_back"> < </div>
-	<div id="spk_content_cont">
-		<div id="arrow_box"></div>
-		<div id="spk_content">
-			<div id="spk_head">
-				<!-- Name of speaker -->
-			</div>
-			<div id="spk_desc">
-				<!-- Description of speaker -->
-			</div>
-		</div>
-	</div>
 	<div id="spk_details_img" style="display:none;">
 		<div id="spk_det_fill"></div>
 		<div id="name_slide">
@@ -1264,6 +1263,17 @@ button:hover
 			<div class="spk_sta_img">
 				<div class="spk_sta_imgc"></div>
 				<div class="spk_sta_imga"></div>
+			</div>
+		</div>
+	</div>
+	<div id="spk_content_cont">
+		<div id="arrow_box"></div>
+		<div id="spk_content">
+			<div id="spk_head">
+				<!-- Name of speaker -->
+			</div>
+			<div id="spk_desc">
+				<!-- Description of speaker -->
 			</div>
 		</div>
 	</div>
@@ -1515,7 +1525,7 @@ function changeSpk(forward){
 			currentSpk = speaker_data.length-1;
 		}
 	}
-	var ratio = $(window).width()/1000;
+	var ratio = ($(window).width()>$(window).height()?$(window).width():$(window).height())/500;
 	$('#spk_det_fill').css({
 	  'background-color' : colors[currentSpk],
 	  '-webkit-transform' : 'scale('+ratio+')',
@@ -1545,7 +1555,6 @@ function changeSpk(forward){
 			  'transform'         : 'scale(1)',
 			  'opacity':'1'
 			});
-		$('#spk_details').css('background-color',colors[currentSpk]);
 		$('#spk_det_fill').css({
 		  'background-color' : '',
 		  '-webkit-transform' : '',
@@ -1554,6 +1563,7 @@ function changeSpk(forward){
 		  '-o-transform'      : '',
 		  'transform'         : '',
 		});
+		$('#spk_details').css('background-color',colors[currentSpk]);
 		$('.spk_sta_imga').css({'background-position': ''});
 		var spk_detail = speaker_data[currentSpk];
 		$('#spk_head').text(spk_detail["name"]);
@@ -1561,7 +1571,7 @@ function changeSpk(forward){
 		$('#name_spk').text(spk_detail["name"]);
 		$('.spk_sta_imga').css('background-image','url("'+spk_detail["img"]+'")');
 		setTimeout(function() {
-			$('#name_slide').fadeIn();
+			$('#name_slide').stop(true,true).fadeIn();
 			$('#spk_head').css('opacity','1');
 			setTimeout(function() {
 				$('#spk_desc').css('opacity','1');
