@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>APOGEE 16 INTRO</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<!-- <link href='https://fonts.googleapis.com/css?family=Roboto:700' rel='stylesheet' type='text/css'> -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto:700' rel='stylesheet' type='text/css'>
 	<script type="text/javascript" src="js/jquery.min(1.11.1).js"></script>
 	<!-- // <script src="https://maps.googleapis.com/maps/api/js"></script>  -->
 	<!-- // <script type="text/javascript" src="js/customMap.js"></script> -->
@@ -1091,7 +1091,6 @@ button:hover
 </div>
 
 <div id="thinkagain" style="display:block;" class="div_content">
-	<div class="div_title">TH!NK AGAIN</div>
 	<div class="contact_data">
 		<!-- elements added dynamically -->
 		<!-- <div class="speaker">
@@ -1429,6 +1428,7 @@ function spk_details_init(){
 }
 var spk_details_on = false;
 function changeSpk(forward){
+	console.log(forward);
 	if(forward){
 		currentSpk++;
 		if(currentSpk==speaker_data.length)
@@ -1437,7 +1437,7 @@ function changeSpk(forward){
 		}
 	}
 	else{
-		currentSpk;
+		currentSpk--;
 		if(currentSpk==0)
 		{
 			currentSpk = speaker_data.length-1;
@@ -1515,43 +1515,43 @@ function thinkagain_reset(spk)
 var speaker_data = 
 [
 	{
-		name:'abc1',
-		description:'abc',
+		name:'(Late) Dr. APJ Abdul Kalam',
+		description:'The ‘Missile Man of India’, Dr. APJ Abdul Kalam was a great leader, an accomplished scientist, a passionate teacher and a true patriot. An aeronautics engineer from Madras Institute of Technology, Kalam was considered the brain of missile programme in India. He contributed in great measures to the development of ballistic missile and the launch of vehicle technology, making India one of the forerunners in missile technology in the world. His work got him several accolades including the Padma Bhushan, Padma Vibhushan and Bharat Ratna, India\'s highest civilian honour',
 		img:'images/phaser.png',
 	},
 	{
-		name:'abc2',
-		description:'abc',
+		name:'Jimmy Wales',
+		description:'Today Wikipedia is the fifth most popular website in the world, and leading technology futurist and Wikipedia founder, Jimmy Wales, is one of the most sought after visionaries in business and technology. Named among the Time Magazine\'s "100 Most Influential People,"[2006] Jimmy Wales has also been acknowledged by the World Economic Forum as one of the top 250 young leaders across the world for his professional accomplishments, his commitment to society, and his potential to contribute to shaping the future of the world.',
 		img:'images/phaser.png',
 	},
 	{
-		name:'abc3',
-		description:'abc',
+		name:'Jeff Lieberman',
+		description:'We consciously perceive less than one trillionth of the reality in which we live. Our senses are doorways with invisible edges, compressing the infinite complexity of the universe into a manageable finite form. Jeff Lieberman, the host of the popular “Time Warp” series on Discovery Channel, is an avid explorer who has taken the scientific path into solving the enigma that is human consciousness. His work is an enlightening foray that exploits the edges, making us conscious of our doors of perception, and questioning the nature of perception and the universe itself.',
 		img:'images/phaser.png',
 	},
 	{
-		name:'abc4',
-		description:'abc',
+		name:'Dr. Pawan Agrawal',
+		description:'"Believe me friends after I have spoken, you won\'t be able to move from your chair. This is my guarantee." These were the opening words of Dr. Pawan Agrawal at Think Again Conclave 2013. The CEO of Mumbai Dabbawalas, Dr. Pawan exuded sheer confidence as he spoke at length about the six-sigma and ISO certified organisation. Having scripted history with by showcasing excellence in customer care for more than a century, the dabbawalas have piqued interest and earned repute at the global level.',
 		img:'images/phaser.png',
 	},
 	{
-		name:'abc5',
-		description:'abc',
+		name:'Prof. Walter Lewin',
+		description:'Prof. Walter Lewin is a renowned astrophysicist and emeritus professor at MIT, is a figure well known across the globe for his video lectures on Physics. A widely acclaimed professor, Lewin is considered to be in the same league as Feynman and Pauli when it comes to teaching.',
 		img:'images/phaser.png',
 	},
 	{
-		name:'abc6',
-		description:'abc',
+		name:'Elena Bodnar',
+		description:'For Dr. Elena Bodnar, the director of the Chicago-based Trauma Risk Management Research Institute, the inspiration for designing the Emergency Bra, a traditional-looking brassiere that converts into two respiratory face masks in case of fire, natural disaster or terrorist attack came from two disasters. Fresh out of med school in Ukraine (then the Soviet Union) in 1986, she helped treat victims of the Chernobyl nuclear explosion. Years later, after Bodnar moved to Chicago, footage of September 11 victims using shirts to filter out debris got her thinking again about the Emergency Bra.',
 		img:'images/phaser.png',
 	},
 	{
-		name:'abc7',
-		description:'abc',
+		name:'Dr. Walter Bender',
+		description:'Dr. Walter Bender is an alumnus of MIT, a technologist and researcher who works in the field of electronic publishing, media and technology for learning. He is founder of Sugar Labs, which develops educational software used by more than three-million children in more than forty countries. He launched the era of digital news in 1992 by forming the MIT News in the Future consortium. In 2006, Bender co-founded the One Laptop per Child, a non-profit association with Nicholas Negroponte and Seymour Papert. He is the person behind the Open Leaning Program which would enable collaborative research among universities globally.',
 		img:'images/phaser.png',
 	},
 	{
-		name:'abc8',
-		description:'abc',
+		name:'Dr. Bindeshwar Pathak',
+		description:'Dr. Bindeshwar Pathak is an Indian sociologist and the founder of Sulabh International, a social service organization which works to promote human rights, environmental sanitation, non-conventional sources of energy, waste management and social reforms through education. His work is considered one of the pioneer in social reform especially in the field of sanitation and hygiene, for which he has received various national and international awards.',
 		img:'images/phaser.png',
 	},
 ];
