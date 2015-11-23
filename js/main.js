@@ -487,7 +487,15 @@ $('.header .but_head>span').hover(function(){
 
 function projmasteranim(){
 	$('#red0 , #blue0').css({display:"block"});
-	$('#red0').animate({left:"0%"},500,function(){$('#blue0').animate({right:"0%"},300,function(){projectanimate();});});
+	$('#red0').animate({left:"0%"},600,function() {
+		
+	});
+	setTimeout(function() {
+		$('#blue0').animate({right:"0%"},300,function(){
+			projectanimate();
+		});
+	},300);
+	
 }
 
 function projectanimate(){
