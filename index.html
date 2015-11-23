@@ -35,7 +35,6 @@
 
 	<script type="text/javascript" src="js/jquery.min(1.11.1).js"></script>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js"></script> 
 	<script type="text/javascript" src="js/customMap.js"></script>
 
@@ -520,10 +519,10 @@ object{
 	background-color: #B71C1C;
 }
 .speaker:hover .color4{
-	color: #0c6dbf;
+	color: #0D47A1;
 }
 .color4:before{	
-	background-color: #0c6dbf;
+	background-color: #0D47A1;
 }
 .speaker:hover .color5{
 	color: #00695C;
@@ -992,7 +991,9 @@ p.about_content{
     left: 0;
     right: 0;
     margin: 30px auto 30px auto;
-    color: white;}
+    color: white;
+		
+}
 		/* form starting stylings ------------------------------- */
 .group        { 
   position:relative; 
@@ -1212,16 +1213,21 @@ input[type=number]::-webkit-outer-spin-button {
 		100%{opacity:1;}
 	}
 	.title2{
-	    text-align: center;
+	        text-align: center;
     font-size: 2.5em;
-    font-weight: 800;
+    font-weight: 900;
     color: #f9f9f9;
+    border-bottom: 1px solid white;
+    padding-bottom: 20px;
+    margin: 40px;
 	}
 	.content{
-		font-size: 1.3em;
+		font-size: 1.8em;
 	    color: #fff;
 	    text-align: center;
-	    padding: 20px;
+	    padding: 50px;
+	    padding-top: 10px;
+	    font-weight:200;
 	}
 
 	.button {
@@ -1474,52 +1480,20 @@ input[type=number]::-webkit-outer-spin-button {
 
 		<div class="tile" id="tile1">
 		<p class="title2">PAPER PRESENTATION</p>
-		<p class="content">A widely participated event that showcases papers with topics ranging from industrial aplications to the very latest scientific innovations.</p>
-		<!-- SVG Sprite -->
-			<div style="height: 0; width: 0; position: absolute; visibility: hidden;" aria-hidden="true">
-				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" focusable="false">
-					<symbol id="ripple_effect" viewBox="0 0 100 100">
-						<circle id="ripple_shape" cx="1" cy="1" r="1" />
-					</symbol>
-				</svg>
-			</div>
-			<!-- /end sprite -->
-		
-			<!-- button component -->
-			
-			<button id="js-ripple-btn1" class="button calm">
-				More...
-				<svg class="ripple-obj" id="js_ripple">
-					<use height="100" width="100" xlink:href="#ripple_effect" class="js-ripple"></use>
-				</svg>
-			</button>
-			
-			<!-- /end button component -->
+		<p class="content">Paper presentation forms the core event of APOGEE that showcases a wide range of technical and review papers on a spectrum of topics ranging from industrial applications to the very latest scientific innovations. Submit your paper abstracts before 15th December 2015 !</p>
+		<a href="http://bits-apogee.org/papers/" target="blank">
+		<p class="content"><b>Click here to know more...</b></p>
+		</a>
+
 
 		</div>
 		<div class="tile" id="tile2">
 		<p class="title2">PROJECTS</p>
-		<p class="content">APOGEE exhibits over 550 projects in various fields of science and engineering. Based on practical application, they showcase unparalleled excellence.</p>
-		<!-- SVG Sprite -->
-			<div style="height: 0; width: 0; position: absolute; visibility: hidden;" aria-hidden="true">
-				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" focusable="false">
-					<symbol id="ripple_effect" viewBox="0 0 100 100">
-						<circle id="ripple_shape" cx="1" cy="1" r="1" />
-					</symbol>
-				</svg>
-			</div>
-			<!-- /end sprite -->
+		<p class="content">APOGEE exhibits over 550 projects in various fields of science and engineering. Based on practical application, they showcase unparalleled excellence. Some of the categories of Projects include Electronics, Environment, Software Development and Mathematical Modelling..</p>
+		<a href="http://bits-apogee.org/projects/" target="blank">
 		
-			<!-- button component -->
-			
-			<button id="js-ripple-btn2" class="button calm">
-				More...
-				<svg class="ripple-obj" id="js_ripple">
-					<use height="100" width="100" xlink:href="#ripple_effect" class="js-ripple"></use>
-				</svg>
-			</button>
-			
-			<!-- /end button component -->
+		<p class="content"><b>Click here to know more...</b></p>
+		</a>
 
 		</div>
 
@@ -1555,7 +1529,7 @@ $(document).ready(function(){
 	$('#thinkagain .contact_data').html(data);
 });
 var cur_con = 0; //0-About 7-Contacts
-var colors = ['#2E7D32','#F4511E','#C51162','#B71C1C','#0c6dbf','#00695C','#00838F','#3E2723','#915986'];
+var colors = ['#2E7D32','#F4511E','#C51162','#B71C1C','#0D47A1','#00695C','#00838F','#3E2723','#915986'];
 var divname = ['#about','#cam_amb','#events','#thinkagain','#reg','#pnp','#spons','#contacts'];
 var currentSpk = 0; //stores current speaker that is displayed
 
@@ -1612,7 +1586,7 @@ $('.but_head > span').click(function(){
 	$(divname[cur_con]).css('display','none');
 	cur_con = $(this).parent().index();
 	$('#nav_but').click();
-	$('#fulltransit').css('background-color',colors[cur_con]);
+	$('#fulltransit').css('background-color',colors[7-cur_con]);
 	divanim();
 });
 
@@ -2032,49 +2006,6 @@ $('.header .but_head>span').hover(function(){
 })
 
 
-
-	var ripplyScott = (function() {
-
-  	function rippleAnimation(event, timing) {
-    var tl           = new TimelineMax();
-        x            = event.offsetX,
-        y            = event.offsetY,
-        w            = event.target.offsetWidth,
-        h            = event.target.offsetHeight,
-        offsetX      = Math.abs( (w / 2) - x ),
-        offsetY      = Math.abs( (h / 2) - y ),
-        deltaX       = (w / 2) + offsetX,
-        deltaY       = (h / 2) + offsetY,
-        scale_ratio  = Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2));
-
-    tl.fromTo($(this).find('.js-ripple'), timing, {
-      x: x,
-      y: y,
-      transformOrigin: '50% 50%',
-      scale: 0,
-      opacity: 1,
-      ease: Linear.easeIn
-    },{
-      scale: scale_ratio,
-      opacity: 0
-    });
-
-    return tl;
-  }
-
-  return {
-    init: function(target, timing) {
-      var button = document.getElementById(target);
-
-      button.addEventListener('click', function(event) {
-        rippleAnimation.call(this, event, timing);
-      });
-    }
-  };
-})();
-
-ripplyScott.init('js-ripple-btn1', 0.75);
-ripplyScott.init('js-ripple-btn2', 0.75);
 
 function projmasteranim(){
 	$('#red0 , #blue0').css({display:"block"});
