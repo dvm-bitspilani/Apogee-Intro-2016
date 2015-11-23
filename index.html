@@ -558,6 +558,7 @@ object{
 	height: 100vh;
 	text-align: center;
 	background-color: #fff;
+
 }
 
 #spk_desc {
@@ -866,9 +867,6 @@ p.about_content{
 	font-size: 1.5em;
 	text-shadow: 1px 1px #250911;
 }
-@media screen and (max-width: 750px){
-	
-}
 /*About END*/
 
 /*--------------------Sponsors----------------------*/
@@ -1072,12 +1070,28 @@ button:hover
 @media screen and (max-width: 600px) {
 	#spk_content_cont{
 		left: -100vw;
-		position: relative;
 		width: 100%;
 	}	
 	#spk_details_img{
 		position: relative;
 		width: 100%;
+	}
+}
+@media screen and (max-width: 1000px) {
+	#spk_content_cont{
+	    position: relative;
+	    top: 0;
+	    height: auto;
+	    min-height: 100vh;
+	    margin-top: -25px;
+	}
+	#spk_content{
+		top: 50px;
+		margin-top: 25px;
+		padding-top: 25px;
+		-moz-transform: none;
+		-webkit-transform: none;
+		transform: none;
 	}
 }
 </style>
