@@ -56,7 +56,7 @@ var mapCanvas = document.getElementById('map');
 
 var mapOptions = {
 center: new google.maps.LatLng(28.364, 75.587),
-zoom: 16,
+zoom: 15,
 scrollwheel: false,          					 //disables scrollwheel zoom of mouse
 disableDefaultUI: true,						//disables everymarker(man,zoom control,pan control)
 //panControl: false,						//disables pan control
