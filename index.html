@@ -322,13 +322,13 @@ body{
 	font-size: 2.8em;
 	font-weight: 800;
 	padding: 30px 0;
-	display: none;
+	opacity: 0;
 	color:#383535;
 }
 #aboutdet
 {
 	font-size:1.4em;
-	display: none;
+	opacity: 0;
 	padding: 10px 20px;
 }
 
@@ -706,7 +706,7 @@ marker = new google.maps.Marker({ position: new google.maps.LatLng(28.364, 75.58
 		$('#logo-animation').addClass('close');
 		$('#logo-animation').css({'margin-left':''});
 		$('#aboutcon').css({'right':''});
-		$('#abouthead,#aboutdet').css('display','none');
+		$('#abouthead,#aboutdet').css('opacity','');
 		setTimeout(aboutanim,1050);
 		
 	}
@@ -716,7 +716,7 @@ marker = new google.maps.Marker({ position: new google.maps.LatLng(28.364, 75.58
 		setTimeout(function(){
 			$('#logo-animation').animate({'margin-left':'5%'},300);
 			$('#aboutcon').animate({'right':'-50%'},300,function(){
-				$('#abouthead,#aboutdet').fadeIn(500);
+				$('#abouthead,#aboutdet').fadeTo(500,1);
 			});
 		},4000);
 	}
