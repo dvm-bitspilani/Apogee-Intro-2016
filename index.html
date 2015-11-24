@@ -365,7 +365,15 @@ body{
 }
 
 /* ABOUT END*/
-
+/*Loader*/
+#loader{
+	background-color: #fff;
+    z-index: 1200;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+/*Loader end*/
 </style>
 <body>
 <button id="nav_but" class="c-hamburger c-hamburger--htx">
@@ -418,11 +426,12 @@ body{
 	<div id="halftransit"></div>
 	<div id="fulltransit"></div>
 </div>
-<div id="loader" style="background-color: #fff">
-	<div class="load" style="z-index: 1000">
+<div id="loader" style="background-color: #fff; z-index:1200">
+	<div class="load">
 	   <div class="dot"></div>
 	   <div class="outline"><span></span></div>
 	</div>
+	<img src="images/loader.png" class="abs_center">
 </div>
 <div id="about" class="div_content"  style="display:block;">
 	<div id="logo-animation" class="abs_center close">
@@ -443,7 +452,7 @@ body{
 
 <div id="cam_amb" class="div_content"></div>
 
-<div id="events" class="div_content" style="display:none;background-color:#068271;">
+<div id="events" class="div_content" style="display:none">
 	<div class="div_title">Events</div>
 	<div class="contact_data">
 		<div class="event_cont slide">
@@ -726,7 +735,7 @@ $(window).load(function()
 	// setTimeout(function(){
 	// 	$('#loader').remove();
 	// 	aboutanim();
-	// },250)
+	// },250);
 });
 </script>
 
