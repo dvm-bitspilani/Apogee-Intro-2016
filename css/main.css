@@ -800,7 +800,7 @@ height: 25px;width: 25px;margin: 10px;
 /*--------------------Sponsors----------------------*/
 #spons
 {
-	background: #315A5F;
+	background: #37474F;
 }
 .spons_cont
 {
@@ -809,7 +809,7 @@ height: 25px;width: 25px;margin: 10px;
 	margin: 35px;
 	width: 250px;
 	height: 250px;
-	border: 1px solid #065b63;
+	/*border: 1px solid #065b63;*/
 	/*background: url("images/sponsback.jpg") no-repeat center center #f9f9f9;*/
 	background-color: white;
  box-shadow: 2px 2px 20px -2px #222;
@@ -987,9 +987,7 @@ input[type=number]::-webkit-outer-spin-button {
 	color: #fff;
 	background-color: #C62828;
 	font-size: 1.15em;
-	line-height: 24px;
-	height: 38px;
-	width: 100px;
+	height: 40px;
 	border-radius: 2px;
 	cursor: pointer;
 	box-shadow: 1px 1px 2px 0px #999;
@@ -1014,6 +1012,11 @@ input[type=number]::-webkit-outer-spin-button {
 	#spk_details_img{
 		position: relative;
 		width: 100%;
+	}
+	.event_cont{
+		width: 300px;
+		height: 225px;
+		font-size: 0.8em;
 	}
 }
 
@@ -1059,7 +1062,7 @@ input[type=number]::-webkit-outer-spin-button {
 	.tile{
 		display: none;
 	}
-	#tile1{left: 0;}
+	#tile1{left: 0;background-color: #00838F;}
 	#tile2{left: 50%;}
 	
 	.tile2anim{
@@ -1184,11 +1187,11 @@ input[type=number]::-webkit-outer-spin-button {
    		.tile1anim,.tile2anim{
    			width: 100%;
    		}
-   		.tile1anim{top: 5%;}
-   		.tile2anim{top: 45%;left: 0 !important;}
+   		.tile1anim{top: 5%;position: relative;}
+   		.tile2anim{top: 45%;left: 0 !important;position: relative;}
    		#blue0{width: 0;}
    		.button{font-size: 0.5em;}
-   		.title2{font-size: 120%;}
+   		.title2{font-size: 120%;padding-top: 15px;}
    		.content{font-size: 90%;}
 	}
 /* Paper and Presentation--------------------------------*/
