@@ -30,8 +30,8 @@
 
 
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<!-- <link href='https://fonts.googleapis.com/css?family=Roboto:700' rel='stylesheet' type='text/css'> -->
-	<!-- <link href='https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'> -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto:700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
 
 	<script type="text/javascript" src="js/jquery.min(1.11.1).js"></script>
 
@@ -100,6 +100,10 @@
             transform: scale(1, 1);
   }
 }
+
+body{
+	background-color: #f6f6f6;
+}
 .slide{
 	-webkit-transform: scale(0, 0) translateY(0);
             transform: scale(0, 0) translateY(0);
@@ -162,33 +166,46 @@
 }
 .event_cont{
 	position: relative;
-	display: inline-block;
-	width: 250px;
-	height: 280px;
-	padding: 10px 0;
-	overflow: hidden;
-	background-color: #eee;
-	background-position: bottom;
-	margin: 25px;
-	box-shadow: 4px 4px 20px -2px #222;
-	cursor:pointer;
+    display: inline-block;
+   	width: 400px;
+   	height: 300px;
+    padding: 10px 0;
+    overflow: hidden;
+    background-color: #eee;
+    background-position: bottom;
+    margin: 25px;
+    box-shadow: 4px 4px 20px -2px #222;
+    cursor: pointer;
+
 }
-.event_head{
-	font-size: 20px;
+
+.event_cont:hover>.event_head1
+{
+	transform:translateY(-61px);
+}
+
+.event_head1{
+	    font-size: 20px;
     line-height: 30px;
     font-weight: bold;
     height: 60px;
     position: absolute;
-    top: 0;
+    bottom: -63px;
     padding: 15px;
     width: 100%;
-    color:#fff;
+    color: #fff;
+    background:red;
+    z-index: 1000;
+    transition:transform 300ms;
+    -webkit-transition:-webkit-transform 300ms;
 }
+
+
 .event_details{
 	position: absolute;
 	width: 100%;
 	left:0;
-	top: 60px;
+	top: 0px;
 	bottom:0;
 	color: #eee;
 	text-align: left;
@@ -202,8 +219,14 @@
 
 }
 .event_details img{
+	max-width: none;
 	width: 100%;
-	height: 100%;
+	-webkit-transition: -webkit-transform 300ms;
+	transition:transform 300ms;
+}
+ .event_details:hover
+{
+	transform:translateY(-30px);
 }
 .eve_det_front{
 position: absolute;
@@ -243,31 +266,9 @@ position: absolute;
   pointer-events: none;
   line-height: 160px;
 }
-.event_details[data-direction="left"] .eve_det_back,
-.event_details[data-direction="right"] .eve_det_back {
-  -webkit-transform: translateZ(-2px) rotateY(180deg);
-          transform: translateZ(-2px) rotateY(180deg);
-}
-
-
-.event_details[data-direction="top"].is-open {
+.event_details.is-open {
   -webkit-transform: rotateX(180deg);
           transform: rotateX(180deg);
-}
-
-.event_details[data-direction="right"].is-open {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-}
-
-.event_details[data-direction="bottom"].is-open {
-  -webkit-transform: rotateX(-180deg);
-          transform: rotateX(-180deg);
-}
-
-.event_details[data-direction="left"].is-open {
-  -webkit-transform: rotateY(-180deg);
-          transform: rotateY(-180deg);
 }
 /*Events End*/
 /*ABOUT START */
@@ -403,10 +404,10 @@ position: absolute;
 			<div class="but_head" style="transition-delay: 0s"><span onclick="aboutinit()">ABOUT</span></div>
 			<div class="but_head" style="transition-delay: 0.05s;display:none;"><span>Campus Ambassdor</span></div>
 			<div class="but_head" style="transition-delay: 0.1s"><span onclick="eventdinit()">EVENTS</span></div>
-			<div class="but_head" style="transition-delay: 0.15s"><span>THINK AGAIN</span></div>
-			<div class="but_head" style="transition-delay: 0.2s"><span onclick="formup()">REGISTER</span></div>
-			<div class="but_head" style="transition-delay: 0.25s"><span onclick="pnpinit()">PAPER & PRESENTATION</span></div>
-			<div class="but_head" style="transition-delay: 0.3s"><span>SPONSORS</span></div>
+			<div class="but_head" style="transition-delay: 0.15s"><span>PAST SPEAKERS</span></div>
+			<div class="but_head" style="transition-delay: 0.2s"><span onclick="pnpinit()">PAPER & PRESENTATION</span></div>
+			<div class="but_head" style="transition-delay: 0.25s"><span>LAST YEAR'S SPONSORS</span></div>
+			<div class="but_head" style="transition-delay: 0.30s"><span onclick="formup()">REGISTER</span></div>
 			<div class="but_head" style="transition-delay: 0.35s"><span onclick="setTimeout(initMap,1000)">CONTACTS</span></div>
 		
 			<div id="social">
@@ -475,7 +476,7 @@ position: absolute;
 	<div class="div_title">Events</div>
 	<div class="contact_data">
 		<div class="event_cont slide">
-			<div class="event_head size">Hackthon</div>
+			<div class="event_head1">Hackthon</div>
 			<div class="event_details zoom">
 				<div class="eve_det_front">
 					<img src="images/dhiti.jpg">
@@ -486,7 +487,7 @@ position: absolute;
 			</div>
 		</div>
 		<div class="event_cont slide">
-			<div class="event_head size">Reverse Engineering</div>
+			<div class="event_head1">Reverse Engineering</div>
 			<div class="event_details zoom">
 				<div class="eve_det_front">
 					<img src="images/dhiti.jpg">
@@ -498,7 +499,7 @@ position: absolute;
 			</div>
 		</div>
 		<div class="event_cont slide">
-			<div class="event_head size">Dhiti</div>
+			<div class="event_head1">Dhiti</div>
 			<div class="event_details zoom">
 				<div class="eve_det_front">
 					<img src="images/dhiti.jpg">
@@ -509,7 +510,7 @@ position: absolute;
 			</div>
 		</div>
 		<div class="event_cont slide">
-			<div class="event_head size">FTGP</div>
+			<div class="event_head1">FTGP</div>
 			<div class="event_details zoom">
 				<div class="eve_det_front">
 					<img src="images/dhiti.jpg">
@@ -520,7 +521,7 @@ position: absolute;
 			</div>
 		</div>
 		<div class="event_cont slide">
-			<div class="event_head size">RAW</div>
+			<div class="event_head1">RAW</div>
 			<div class="event_details zoom">
 				<div class="eve_det_front">
 					<img src="images/dhiti.jpg">
@@ -531,7 +532,7 @@ position: absolute;
 			</div>
 		</div>
 		<div class="event_cont slide">
-			<div class="event_head size">I-strike</div>
+			<div class="event_head1">I-strike</div>
 			<div class="event_details zoom">
 				<div class="eve_det_front">
 					<img src="images/dhiti.jpg">
@@ -542,7 +543,7 @@ position: absolute;
 			</div>
 		</div>
 		<div class="event_cont slide">
-			<div class="event_head size">AIC</div>
+			<div class="event_head1">AIC</div>
 			<div class="event_details zoom">
 				<div class="eve_det_front">
 					<img src="images/dhiti.jpg">
@@ -704,44 +705,12 @@ var btnFront = $('.eve_det_front'),
     btnBack = $('.eve_det_back');
 btnFront.click(function(event) {
 	var btn = $(this).parent();
-    var mx = event.clientX - btn.offsetLeft,
-        my = event.clientY - btn.offsetTop;
-    var w = btn.offsetWidth,
-        h = btn.offsetHeight;
-    var directions = [{
-        id: 'top',
-        x: w / 2,
-        y: 0
-    }, {
-        id: 'right',
-        x: w,
-        y: h / 2
-    }, {
-        id: 'bottom',
-        x: w / 2,
-        y: h
-    }, {
-        id: 'left',
-        x: 0,
-        y: h / 2
-    }];
-    directions.sort(function(a, b) {
-        return distance(mx, my, a.x, a.y) - distance(mx, my, b.x,
-            b.y);
-    });
-    btn.attr('data-direction', directions.shift().id);
     btn.addClass('is-open');
 });
 btnBack.click(function(event) {
 	var btn = $(this).parent();
     btn.removeClass('is-open');
 });
-
-function distance(x1, y1, x2, y2) {
-    var dx = x1 - x2;
-    var dy = y1 - y2;
-    return Math.sqrt(dx * dx + dy * dy);
-}
 </script>
 <script type="text/javascript">
 function initMap() {

@@ -8,7 +8,7 @@ $(document).ready(function(){
 });
 var cur_con = 0; //0-About 7-Contacts
 var colors = ['#2E7D32','#F4511E','#C51162','#B71C1C','#0D47A1','#00695C','#00838F','#3E2723','#915986'];
-var divname = ['#about','#cam_amb','#events','#thinkagain','#reg','#pnp','#spons','#contacts'];
+var divname = ['#about','#cam_amb','#events','#thinkagain','#pnp','#spons','#reg','#contacts'];
 var currentSpk = 0; //stores current speaker that is displayed
 
 $('#nav_but').click(function(){
@@ -487,7 +487,15 @@ $('.header .but_head>span').hover(function(){
 
 function projmasteranim(){
 	$('#red0 , #blue0').css({display:"block"});
-	$('#red0').animate({left:"0%"},400,function(){$('#blue0').animate({right:"0%"},350,function(){projectanimate();});});
+	$('#red0').animate({left:"0%"},600,function() {
+		
+	});
+	setTimeout(function() {
+		$('#blue0').animate({right:"0%"},300,function(){
+			projectanimate();
+		});
+	},300);
+	
 }
 
 function projectanimate(){
