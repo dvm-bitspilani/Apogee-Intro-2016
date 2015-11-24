@@ -270,6 +270,127 @@ position: absolute;
           transform: rotateY(-180deg);
 }
 /*Events End*/
+/*ABOUT START */
+#about
+{
+
+	background-color: #ECECEC;
+}
+#logo-animation
+{	
+	width:35vw;
+	height: 35vw;
+	position: fixed;
+}
+
+.logo-layers
+{	position:absolute;
+	opacity:1;
+	margin:auto;
+	left:0px;
+	right:0px;
+	width:100%;	
+} 
+
+#logo-layer1
+{	transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.5s;
+	-webkit-transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.5s; 
+}
+#logo-layer2
+{	transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.25s;
+	-webkit-transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.25s;
+}
+#logo-layer3
+{	transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
+	-webkit-transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
+}
+#logo-layer4
+{	transition: 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+	-webkit-transition: 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+}
+#logo-layer5
+{	transition: 1.5s ease 3s;
+	-webkit-transition: 1.5s ease 3s;
+}
+
+#about .close img#logo-layer1{ left:-150px;opacity:0; transition: 0s ease; -webkit-transition: 0s ease;}
+#about .close img#logo-layer2 { left:150px;opacity:0; transition: 0s ease; -webkit-transition: 0s ease;}
+#about .close img#logo-layer3 { left:-150px;opacity:0; transition: 0s ease; -webkit-transition: 0s ease;}
+#about .close img#logo-layer4 { left:150px;opacity:0; transition: 0s ease; -webkit-transition: 0s ease;}
+#about .close img#logo-layer5 { opacity:0; transition: 0s ease; -webkit-transition: 0s ease;}
+
+#aboutcon
+{
+	position: relative;
+	top:0;
+	margin-top: -45px;
+	padding: 50px 25px;
+	min-height: 100vh;
+	right:-110%;
+	width: 50%;
+	background-color:#CE343B;
+}
+#arrowabout
+{
+	position: absolute;
+    top: 25%;
+    left: -15px;
+    height: 30px;
+    width: 30px;
+    background-color: #CE343B;
+    transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+#abouthead
+{
+	font-size: 2.8em;
+	font-weight: 800;
+	padding: 30px 0;
+	display: none;
+	color:#383535;
+}
+#aboutdet
+{
+	font-size:1.4em;
+	display: none;
+	padding: 10px 20px;
+}
+
+@media screen and (max-width: 700px) {
+	#logo-animation
+	{	
+		position: relative;
+		margin-top:10%;
+		width:60%;
+		height: 70vw;
+		margin-left: 20% !important;
+	}
+	#arrowabout
+	{
+		display: none;
+	}	
+	#aboutcon
+	{
+		position: relative;
+		width: 100%;
+		top:0;
+		left:0;
+		right: 0;
+		margin-top: 0;
+		min-height: auto;
+	}	
+	#abouthead
+	{
+		font-size: 2.8em;
+		font-weight: 800;
+		padding: 0;
+		padding-bottom: 30px;
+	}
+}
+
+/* ABOUT END*/
+
 </style>
 <body>
 <button id="nav_but" class="c-hamburger c-hamburger--htx">
@@ -279,7 +400,7 @@ position: absolute;
 	<div class="fill"></div>
 	<div class="head_content">
 		<div class="but_links">
-			<div class="but_head" style="transition-delay: 0s"><span>ABOUT</span></div>
+			<div class="but_head" style="transition-delay: 0s"><span onclick="aboutinit()">ABOUT</span></div>
 			<div class="but_head" style="transition-delay: 0.05s;display:none;"><span>Campus Ambassdor</span></div>
 			<div class="but_head" style="transition-delay: 0.1s"><span onclick="eventdinit()">EVENTS</span></div>
 			<div class="but_head" style="transition-delay: 0.15s"><span>THINK AGAIN</span></div>
@@ -322,20 +443,35 @@ position: absolute;
 	<div id="halftransit"></div>
 	<div id="fulltransit"></div>
 </div>
-
-<div id="about" class="div_content"  style="display:none;">
-	<div id="logo">
-		<img src="images/logo.png" alt="APOGEE">
+<div id="loader">
+</div>
+<div id="about" class="div_content"  style="display:block;">
+	<div id="logo-animation" class="abs_center close">
+		<img id="logo-layer1" class="logo-layers" src="images\logo_layers\layer 1.png">
+        <img id="logo-layer2" class="logo-layers" src="images\logo_layers\layer 2.png">
+		<img id="logo-layer3" class="logo-layers" src="images\logo_layers\layer 3.png">
+		<img id="logo-layer4" class="logo-layers" src="images\logo_layers\layer 4.png">
+		<img id="logo-layer5" class="logo-layers" src="images\logo_layers\layer 5_2.png">
 	</div>
-	<div id="aboutdescription">
+	<div id="aboutcon" class="init">
+		<div id="arrowabout"></div>
+		<div id="abouthead">APOGEE 2016</div>
+		<div id="aboutdet">
+			Birla Institute of Technology and Science, Pilani is one of the most prestigious institutes in the country. Over years, BITS Pilani has maintained the reputation of imparting the right mix of education and experience that form the basis for achieving success in the world.<br><br>Apogee, the first ISO 9001:2008 certified technical fest in India, is a large scale event that has attracted the connoisseurs of engineering and technology over years. It represents the zenith of science and engineering in a landscape of future visionaries and scientists.
+		</div>
+	</div>
+	<!-- <div id="logo">
+		<img src="images/logo.png" alt="APOGEE">
+	</div> -->
+	<!-- <div id="aboutdescription">
 		<p class="title1" id="aboutTitle">What is APOGEE ?</p>
 		<p class="about_content">Birla Institute of Technology and Science, Pilani is one of the most prestigious institutes in the country. Over the years, BITS Pilani has maintained the reputation of imparting the right mix of education and experience that forms the basis for achieving success in the world.<br><br>Apogee, the first ISO 9001:2008 certified technical fest in India, is a large scale event that has attracted the connoisseurs of engineering and technology over the years. It represents the zenith of science and engineering in a landscape of future visionaries and scientists.<br></p>
-	</div>
+	</div> -->
 </div>
 
 <div id="cam_amb" class="div_content"></div>
 
-<div id="events" class="div_content" style="display:block;background-color:#068271;">
+<div id="events" class="div_content" style="display:none;background-color:#068271;">
 	<div class="div_title">Events</div>
 	<div class="contact_data">
 		<div class="event_cont slide">
@@ -624,5 +760,35 @@ marker = new google.maps.Marker({ position: new google.maps.LatLng(28.364, 75.58
 }
 
 </script>
+<script type="text/javascript">
+	function aboutinit()
+	{
+		$('#logo-animation').addClass('close');
+		$('#logo-animation').css({'margin-left':''});
+		$('#aboutcon').css({'right':''});
+		$('#abouthead,#aboutdet').css('display','none');
+		setTimeout(aboutanim,1050);
+		
+	}
+	function aboutanim()
+	{
+		$('#logo-animation').removeClass('close');
+		setTimeout(function(){
+			$('#logo-animation').animate({'margin-left':'5%'},300);
+			$('#aboutcon').animate({'right':'-50%'},300,function(){
+				$('#abouthead,#aboutdet').fadeIn(500);
+			});
+		},4000);
+	}
+$(window).load(function()
+{
+	$('#loader').fadeOut();
+	setTimeout(function(){
+		$('#loader').remove();
+		aboutanim();
+	},250)
+});
+</script>
+
 </body>
 </html>
