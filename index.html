@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Apogee 2016 | International Technical Festival | BITS Pilani</title>
+	<title>APOGEE 2016 | International Technical Festival | BITS Pilani</title>
 	
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="content-language" content="EN">
@@ -589,27 +589,27 @@ body{
 	<div style="text-align:center;">
 		<div id="regdes">Fill in the form to register for APOGEE 2016 and stay notified with the latest updates.</div>
 		<div id="regform">
-			<form>
+			<form id="regf">
 				<div class="group">      
-					<input type="text" required>
+					<input id="regname" type="text" required>
 					<span class="highlight"></span>
 					<span class="bar"></span>
 					<label>Name</label>
 				</div>
 
 				<div class="group">      
-					<input type="number" required>
+					<input id="regphone" type="number" required>
 					<span class="highlight"></span>
 					<span class="bar"></span>
 					<label>Phone Number</label>
 				</div>
 				<div class="group">      
-					<input type="text" required>
+					<input  id="regemail" type="text" required>
 					<span class="highlight"></span>
 					<span class="bar"></span>
 					<label>Email</label>
 				</div>
-				<button id="regsubmit">
+				<button id="regsubmit" type="submit">
 					SUBMIT
 				</button>
 			</form>
@@ -712,6 +712,44 @@ marker = new google.maps.Marker({ position: new google.maps.LatLng(28.364, 75.58
 
 </script>
 <script type="text/javascript">
+$('#regf').submit(function(e){
+	e.preventDefault();
+	var sdata ={};
+	var valid = false;
+
+	sdata.pname= $('#regname').val();
+	sdata.email= $('#regemail').val();
+	sdata.phone= $('#regphone').val();
+
+	var emaReg = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{1,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+    var emaTest = emaReg.test(sdata.email);
+
+    var phoReg = /^([0-9]{10})$/;
+    var phoTest = phoReg.test(sdata.phone);
+
+    if( emaTest && phoTest )
+	{
+		$.ajax({
+		url: 'http://bits-apogee.org/2016/portal/initregadd/',
+		method: 'POST',
+		data: sdata,
+		success: function(stat)
+					{
+						if(stat.status)
+						{
+							$('#regform').html("You have been successfully registered!");
+						}
+						else
+						{
+							$('#regform').html("Registration was unsuccessful!<br> Try Again!");
+						}
+					}
+		});
+	}
+	else
+		alert('Invaild Phone Number or Email');
+});
+
 	function aboutinit()
 	{
 		$('#logo-animation').addClass('close');
@@ -733,11 +771,12 @@ marker = new google.maps.Marker({ position: new google.maps.LatLng(28.364, 75.58
 	}
 $(window).load(function()
 {
-	// $('#loader').fadeOut();
-	// setTimeout(function(){
-	// 	$('#loader').remove();
-	// 	aboutanim();
-	// },250);
+
+	$('#loader').fadeOut();
+	setTimeout(function(){
+		$('#loader').remove();
+		aboutanim();
+	},350);
 });
 </script>
 
