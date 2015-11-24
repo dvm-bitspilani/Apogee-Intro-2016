@@ -354,7 +354,7 @@ object{
 			border-bottom-right-radius: 110px;
 			border-bottom-left-radius: 110px;
 			overflow: hidden;
-			background-position: center 0px;
+			background-position: center 5px;
 			background-size: 100% auto;
 			background-repeat: no-repeat;
 			-moz-transition: all 0.3s ease-in-out;
@@ -363,7 +363,7 @@ object{
 		}
 		.speaker:hover .spk_imga
 		{
-			background-position: center 10px;
+			background-position: center 15px;
 		}
 		.speakerdet
 		{
