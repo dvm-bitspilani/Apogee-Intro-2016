@@ -41,6 +41,7 @@
 
 </head>
 <style>
+
 @-webkit-keyframes slide {
   0% {
     -webkit-transform: scale(0, 0) translateY(0);
@@ -75,22 +76,22 @@
 }
 @-webkit-keyframes zoom {
   0%, 55% {
-    -webkit-transform: scale(0, 0);
-            transform: scale(0, 0);
+    width: 0;
+    height:0;
   }
   70%, 100% {
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
+    width: 100%;
+    height: 100%;
   }
 }
 @keyframes zoom {
   0%, 55% {
-    -webkit-transform: scale(0, 0);
-            transform: scale(0, 0);
+    width: 0;
+    height:0;
   }
   70%, 100% {
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -109,6 +110,14 @@ body{
 			animation-fill-mode: forwards;
 }
 .zoom{
+	position: absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom: 0;
+	margin:auto;
+	width: 100%;
+	height: 100%;
 	-webkit-animation-name: zoom;
 			animation-name: zoom;
 	-webkit-animation-duration: 4s;
@@ -153,7 +162,6 @@ body{
     background-color: #eee;
     background-position: bottom;
     margin: 25px;
-    box-shadow: 4px 4px 20px -2px #222;
     cursor: pointer;
 
 }
@@ -360,10 +368,6 @@ body{
 
 </style>
 <body>
-<!-- <div class="load" style="z-index: 1000">
-   <div class="dot"></div>
-   <div class="outline"><span></span></div>
-</div> -->
 <button id="nav_but" class="c-hamburger c-hamburger--htx">
 	<span>Menu</span>
 </button>
@@ -414,7 +418,11 @@ body{
 	<div id="halftransit"></div>
 	<div id="fulltransit"></div>
 </div>
-<div id="loader">
+<div id="loader" style="background-color: #fff">
+	<div class="load" style="z-index: 1000">
+	   <div class="dot"></div>
+	   <div class="outline"><span></span></div>
+	</div>
 </div>
 <div id="about" class="div_content"  style="display:block;">
 	<div id="logo-animation" class="abs_center close">
@@ -431,13 +439,6 @@ body{
 			Birla Institute of Technology and Science, Pilani is one of the most prestigious institutes in the country. Over years, BITS Pilani has maintained the reputation of imparting the right mix of education and experience that form the basis for achieving success in the world.<br><br>Apogee, the first ISO 9001:2008 certified technical fest in India, is a large scale event that has attracted the connoisseurs of engineering and technology over years. It represents the zenith of science and engineering in a landscape of future visionaries and scientists.
 		</div>
 	</div>
-	<!-- <div id="logo">
-		<img src="images/logo.png" alt="APOGEE">
-	</div> -->
-	<!-- <div id="aboutdescription">
-		<p class="title1" id="aboutTitle">What is APOGEE ?</p>
-		<p class="about_content">Birla Institute of Technology and Science, Pilani is one of the most prestigious institutes in the country. Over the years, BITS Pilani has maintained the reputation of imparting the right mix of education and experience that forms the basis for achieving success in the world.<br><br>Apogee, the first ISO 9001:2008 certified technical fest in India, is a large scale event that has attracted the connoisseurs of engineering and technology over the years. It represents the zenith of science and engineering in a landscape of future visionaries and scientists.<br></p>
-	</div> -->
 </div>
 
 <div id="cam_amb" class="div_content"></div>
