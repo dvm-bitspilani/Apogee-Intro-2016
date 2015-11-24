@@ -29,7 +29,7 @@
   content: "";
   width: 0px;
   height: 0px;
-  background: #3A60DB;
+  background: #37474F;
   -moz-animation: out1 4s linear infinite;
   -webkit-animation: out1 4s linear infinite;
   animation: out1 4s linear infinite;
@@ -146,15 +146,15 @@
   }
   50% {
     -moz-transform: skewX(-40deg);
-    border: solid 5px #3463EB;
+    border: solid 5px #37474F;
   }
   75% {
     -moz-transform: skewX(-60deg);
-    border: solid 5px #3463EB;
+    border: solid 5px #37474F;
   }
   100% {
     -moz-transform: skewX(-80deg);
-    border: solid 5px #3463EB;
+    border: solid 5px #37474F;
   }
 }
 @-webkit-keyframes outlineBefore {
@@ -171,15 +171,15 @@
   }
   50% {
     -webkit-transform: skewX(-40deg);
-    border: solid 5px #3463EB;
+    border: solid 5px #37474F;
   }
   75% {
     -webkit-transform: skewX(-60deg);
-    border: solid 5px #3463EB;
+    border: solid 5px #37474F;
   }
   100% {
     -webkit-transform: skewX(-80deg);
-    border: solid 5px #3463EB;
+    border: solid 5px #37474F;
   }
 }
 @keyframes outlineBefore {
@@ -196,15 +196,15 @@
   }
   50% {
     transform: skewX(-40deg);
-    border: solid 5px #3463EB;
+    border: solid 5px #37474F;
   }
   75% {
     transform: skewX(-60deg);
-    border: solid 5px #3463EB;
+    border: solid 5px #37474F;
   }
   100% {
     transform: skewX(-80deg);
-    border: solid 5px #3463EB;
+    border: solid 5px #37474F;
   }
 }
 @-moz-keyframes in {
@@ -221,17 +221,17 @@
   41% {
     width: 0px;
     height: 0px;
-    background: #3A60DB;
+    background: #37474F;
   }
   50% {
     width: 144px;
     height: 144px;
-    background: #3A60DB;
+    background: #37474F;
   }
   90% {
     width: 0px;
     height: 0px;
-    background: #3A60DB;
+    background: #37474F;
   }
   91% {
     width: 0px;
@@ -258,17 +258,17 @@
   41% {
     width: 0px;
     height: 0px;
-    background: #3A60DB;
+    background: #37474F;
   }
   50% {
     width: 144px;
     height: 144px;
-    background: #3A60DB;
+    background: #37474F;
   }
   90% {
     width: 0px;
     height: 0px;
-    background: #3A60DB;
+    background: #37474F;
   }
   91% {
     width: 0px;
@@ -295,17 +295,17 @@
   41% {
     width: 0px;
     height: 0px;
-    background: #3A60DB;
+    background: #37474F;
   }
   50% {
     width: 144px;
     height: 144px;
-    background: #3A60DB;
+    background: #37474F;
   }
   90% {
     width: 0px;
     height: 0px;
-    background: #3A60DB;
+    background: #37474F;
   }
   91% {
     width: 0px;
@@ -318,19 +318,24 @@
     background: #FFFFFF;
   }
 }
-
+@-moz-keyframes out1 {
+  0% {
+    width: 0px;
+    height: 0px;
+  }
+  30%,100% {
+    width: 200vw;
+    height: 200vw;
+  }
+}
 @-webkit-keyframes out1 {
   0% {
     width: 0px;
     height: 0px;
   }
-  30% {
-    width: 120vw;
-    height: 120vw;
-  }
-  100% {
-    width: 120vw;
-    height: 120vw;
+  30%,100% {
+    width: 200vw;
+    height: 200vw;
   }
 }
 @keyframes out1 {
@@ -338,67 +343,39 @@
     width: 0px;
     height: 0px;
   }
-  30% {
-    width: 120vw;
-    height: 120vw;
-  }
-  100% {
-    width: 120vw;
-    height: 120vw;
+  30%,100% {
+    width: 200vw;
+    height: 200vw;
   }
 }
 @-moz-keyframes out2 {
-  0% {
+  0%,30% {
     width: 0px;
     height: 0px;
   }
-  30% {
-    width: 0px;
-    height: 0px;
-  }
-  60% {
-    width: 120vw;
-    height: 120vw;
-  }
-  100% {
-    width: 120vw;
-    height: 120vw;
+  60%,100% {
+    width: 200vw;
+    height: 200vw;
   }
 }
 @-webkit-keyframes out2 {
-  0% {
+  0%,30% {
     width: 0px;
     height: 0px;
   }
-  30% {
-    width: 0px;
-    height: 0px;
-  }
-  60% {
-    width: 120vw;
-    height: 120vw;
-  }
-  100% {
-    width: 120vw;
-    height: 120vw;
+  60%,100% {
+    width: 200vw;
+    height: 200vw;
   }
 }
 @keyframes out2 {
-  0% {
+  0%,30% {
     width: 0px;
     height: 0px;
   }
-  30% {
-    width: 0px;
-    height: 0px;
-  }
-  60% {
-    width: 120vw;
-    height: 120vw;
-  }
-  100% {
-    width: 120vw;
-    height: 120vw;
+  60%,100% {
+    width: 200vw;
+    height: 200vw;
   }
 }
 *,
